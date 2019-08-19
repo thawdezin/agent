@@ -19,10 +19,10 @@ NEWSPIDER_MODULE = 'agent.spiders'
 USER_AGENT = 'UTYCC Student from Myanmar(Burma)'# +959797990911 www.facebook.com/thawdezin' #'agent (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = False
+ROBOTSTXT_OBEY = True
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-CONCURRENT_REQUESTS = 32
+CONCURRENT_REQUESTS = 256
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://doc.scrapy.org/en/latest/topics/settings.html#download-delay
@@ -108,4 +108,19 @@ REACTOR_THREADPOOL_MAXSIZE = 20
 
 #To disable retries use:
 
-RETRY_ENABLED = True
+# RETRY_ENABLED = True
+
+ITEM_PIPELINES = {
+    'agent.pipelines.AgentPipeline': 300,#mysql အဖြစ် သိမ်း
+    #'agent.pipelines.JsonWithEncodingPipeline': 300,#ဖိုင်အဖြစ် သိမ်း
+    'agent.pipelines.AgentRawPipeline': 300,# အခြေအနေသိရဖို့
+}
+ 
+#Mysql数据库的配置信息
+MYSQL_HOST = '127.0.0.1'
+MYSQL_DBNAME = 'agent'         #数据库名字，请修改
+MYSQL_USER = 'root'             #数据库账号，请修改 
+MYSQL_PASSWD = 'dede'         #数据库密码，请修改
+
+MYSQL_PORT = 3306               #数据库端口，在dbhelper中使用
+

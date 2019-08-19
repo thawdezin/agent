@@ -6,29 +6,16 @@ from scrapy.item import Field, Item
 from scrapy.spiders import CrawlSpider, Rule
 from scrapy.linkextractors import LinkExtractor
 from agent.items import AgentItem
-from agent.helper import Helper
 from scrapy.utils.markup import remove_tags
 import re
 
 def rrm_tags(self, text):
     return remove_tags(text).replace("\n",' ')
 
-class SampleItem(Item):
-    link = Field()
-    name = Field()
-    brand = Field()
-    price = Field()
-    processor = Field() # (Generation and type) 
-    ram = Field() #(Capacity)
-    graphic = Field()
-    display = Field()
-    hdd = Field() #(Capacity and RPM)
-
-
 class LinnSpider(CrawlSpider):
     name = "lin"
     allowed_domains = ["linnonlinestore.com","sln-myanmar.com","royalsmartmm.com"]
-    start_urls = ["http://www.linnonlinestore.com/acer-aspire-e5-476-i3-laptop/"]#,"http://sln-myanmar.com/","http://royalsmartmm.com"]
+    start_urls = ["http://www.linnonlinestore.com/"]#,"http://sln-myanmar.com/","http://royalsmartmm.com"]
 
     rules = (
         Rule(LinkExtractor(deny=[r'.*?setCurrencyId.*']), callback='parse_page', follow=True),
@@ -37,7 +24,7 @@ class LinnSpider(CrawlSpider):
 
     def parse_page(self, response):
         #response.replace(url='http://www.linnonlinestore.com/acer-aspire-e5-476-i3-laptop/')
-        item = SampleItem()
+        item = AgentItem()
         #print(response.url)
         current_url = AgentItem.get_domain(self, response.url)
         if current_url == 'http://www.linnonlinestore.com/':

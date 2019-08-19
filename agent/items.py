@@ -11,39 +11,48 @@ from urllib.parse import urlparse
 import datetime
 import time
 import math
+import os
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
+from scrapy.item import Field, Item
 
 class AgentItem(scrapy.Item):
+    link = Field()
+    name = Field()
+    brand = Field()
+    price = Field()
+    processor = Field() # (Generation and type) 
+    ram = Field() #(Capacity)
+    graphic = Field()
+    display = Field()
+    hdd = Field() #(Capacity and RPM)
+
+    body = Field()
+    tags = Field()
+    body_w = Field()
+    tags_w = Field()
+
     # define the fields for your item here like:
     # name = scrapy.Field()
     def get_domain(self, res_url):
         parsed_uri = urlparse(res_url)
         domain = '{uri.scheme}://{uri.netloc}/'.format(uri=parsed_uri)
         return domain
+    
+    def del_log_file():
+
+        dir_name = "C:\\Users\\thawd\\thesis\\agent"
+        all_file = os.listdir(dir_name)
+
+        for item in all_file:
+            if item.endswith(".log"):
+                os.remove(os.path.join(dir_name, item))
 
     def rm_tags(self, text):
         return remove_tags(text).replace("\n",' ')
-
-    def chk_tfidf(self, text):
-        #လက်တော့နဲ့ ဆိုင်/မဆိုင် စစ် 😋
-        documents = set((text, ))
-        tfidf_vectorizer = TfidfVectorizer(ngram_range=(1,3), min_df = 0, stop_words = 'english')
-        #tfidf_matrix = tfidf_vectorizer.fit(documents)
-        tfidf_matrix = tfidf_vectorizer.fit_transform(documents)
-        #print(tfidf_matrix.shape)
-        tfidf_ma = linear_kernel(tfidf_matrix[0:1], tfidf_matrix).flatten()
-        cs = cosine_similarity(tfidf_matrix[0:1], tfidf_ma)
-        # This was already calculated on the previous step, so we just use the value
-        cos_sim = cs.flat[0]
-        angle_in_radians = math.acos(cos_sim)
-        print(math.degrees(angle_in_radians))
-        angle = math.degrees(angle_in_radians)
-        if angle < 90:
-            return True
-        return True    
+  
     ##############################################################################################################
 
     ##############################################################################################################
@@ -64,33 +73,29 @@ class AgentItem(scrapy.Item):
                 #အိပ်ချင်တယ် ခေါင်းကိုက်တယ် 😭😭😭
 
         if "desktop" in item_title or "Desktop" in item_title or "PC" in item_title:
-            #print("Desktop")
-            count = 0
+            count = 0 # Desktop ဖြစ်နေရင် မယူပါ
+        
 
         if item_quantity is not None and count > 1:
             haha = 0
-            #print("Count is greater than 1 and Count iBBBBBBBB ")
             input_item['link'] = resp.url
             input_item['name'] = item_title # OK for title
-            #print("URL is ", resp.url)
-            #print("Title is ", item_title)
+
             haha = haha + 2
             #__________________________________________________________________________________
             #__________________________________________________________________________________
             item_price_list = resp.css(".VariationProductPrice::text").extract()
-            #print(item_price_list)
             for item_price in item_price_list:
                 if "Ks" in item_price or "ks" in item_price:
                     item_price = item_price.replace("Ks",'')
                     input_item['price'] = item_price
+                    haha += 1
                 if "$" in item_price:
                     item_price = item_price.replace("$",'')
                     item_price = float(item_price)
                     item_price *= 1525
                     input_item['price'] = item_price
-            #input_item['price'] = item_price
-            #print(item_price, " is PRICE")
-            haha += 1
+                    haha += 1
             #__________________________________________________________________________________
             brand_title = item_title
             brand_list = ["HP","ASUS","Lenovo","Acer","HP","MSI","Dell"]
@@ -99,36 +104,40 @@ class AgentItem(scrapy.Item):
                 brand_count = brand_count.lower()
                 if brand_count in brand_title:
                     input_item['brand'] = brand_count #OK for brand
-                    #print(brand_count, " is BRAND")
                     haha += 1
             #__________________________________________________________________________________
             #__________________________________________________________________________________
             span_list = resp.css("span::text").extract() #["7th Intel Core i3-7020U (2.3GHz)", "Gaming","Notebook", "HP","Laptop","Acer","Aspire","Lenovo","Thinkpad","ideapad","Dell","Inspiron","ASUS"]
             for span_item in span_list:
                 span_item = span_item.replace('-','')
+                span_item = span_item.strip()
                 if "Ryzen" in span_item or "Core" in span_item:
                     temp_spec = span_item[:span_item.index("th")]
-                    temp_spec.replace(' ','')
+                    temp_spec = temp_spec.strip()
                     temp_spec += "th Generation Intel Core"
+                    span_item.replace('™','')
+                    span_item.replace('®','')
                     temp_spec += span_item[span_item.index("Core")+len("Core"):span_item.index("Core")+len("Core")+3]
                     temp_spec.replace("- ",'')
+                    temp_spec.replace("™",'')
+                    temp_spec.replace("Core™",'Core')
                     input_item['processor'] = temp_spec #OK for processor
                     haha += 1
-                    #print(temp_spec, " is processor")
                     temp_spec = None
                 if "DDR3" in span_item or "DDR4" in span_item:
                     temp_spec = span_item[:span_item.index("GB")]
+                    temp_spec.replace(" ",'')
+                    temp_spec = "".join(temp_spec.split())
                     input_item['ram'] = temp_spec #OK for ram
                     haha += 1
-                    #print(temp_spec, " is RAM")
                 if "Graphic" in span_item or "Nvidia" in span_item or "Radeom" in span_item  or "AMD Radeon" in span_item:
                     input_item['graphic'] = span_item #OK for Graphic
                     haha += 1
-                    #print(span_item, " is Graphic")
                 if "Display" in span_item or "LCD" in span_item or "Anti-Glare" in span_item or "diagonal" in span_item or "Diagonal" in span_item:
+                    span_item.replace("'",'')
+                    span_item.replace('"','')
                     input_item['display'] = span_item #OK for display
                     haha += 1
-                    #print(span_item, " is Diaplay")
                 if "HDD" in span_item or "SSD" in span_item:
                     hdd_find = span_item.split(" ")
                     for hdd_count in hdd_find:
@@ -138,11 +147,10 @@ class AgentItem(scrapy.Item):
                             hdd_count = hdd_count.replace("GB",'')
                             hdd_count = hdd_count.replace(" ",'')
                             if not hdd_count.isdigit():
-                                hdd_count = 500
+                                hdd_count = 512
                             hdd_count = float(hdd_count)
                             if hdd_count > 255:
                                 input_item['hdd'] = hdd_count #OK for hdd
-                                #print(hdd_count, "GB is HDD")
                                 haha += 1
                             hdd_count = None
                             hdd_count = str(hdd_count)
@@ -151,15 +159,30 @@ class AgentItem(scrapy.Item):
                             hdd_count = int(hdd_count)
                             hdd_count *= 1024
                             input_item['hdd'] = hdd_count #OK for hdd
-                            #print(hdd_count, "GB is HDD via TB")
                             haha += 1
+            resp_body_decode = resp.body
+            input_item['body'] = resp_body_decode.decode("utf-8") 
+            resp_tags = resp.css("span").extract()
+            resp_tags = ''.join(str(e) for e in resp_tags)
+            input_item['tags'] =  resp_tags
+            tmp_resp_body = resp.body
+            input_item['body_w'] = remove_tags(tmp_resp_body).replace("\n",' ')
+            #input_item['tags_w'] = resp.css("span::text").extract()
+            #print("Test: ", input_item['tags'])
             #__________________________________________________________________________________
-            #print("CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC")
-            #print("HaHa Count Inner Loop", haha)
+            print("LINNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN Start")
+            print("Brand: ",input_item['brand'])
+            print("Display: ",input_item['display'])
+            print("Graphic: ",input_item['graphic'])
+            print("HDD: ",input_item['hdd'])            
+            print("Link: ",input_item['link'])
+            print("Name: ",input_item['name'])
+            print("Price: ",input_item['price'])
+            print("Processor: ",input_item['processor'])
+            print("HaHa Count Inner Loop", haha)
+            print("LINNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN End")
             return input_item
-        #print("HaHa Count Outer Loop", haha) outer loopမှာ haha မှ မရှိတာ 😂 
-        time.sleep(5)
-        #print(datetime.datetime.now())
+        #time.sleep(5)
    
     ##############################################################################################################
     ##############################################################################################################
@@ -343,8 +366,9 @@ class AgentItem(scrapy.Item):
         return input_item
 
     #####################################################
-    #Future increase Website နောက်ပိုင်း တိုးလာမဲ့ Website များအတွက် ဆက်ရေးရန်
+    #Future work for more Website နောက်ပိုင်း တိုးလာမဲ့ Website များအတွက် ဆက်ရေးရန်
     #def websiteName_method(self, resp, input_item):
+    #   return input_item
     ##############################################################################################################
     ##############################################################################################################
     ##############################################################################################################
@@ -354,7 +378,23 @@ class AgentItem(scrapy.Item):
     ##############################################################################################################
     ##############################################################################################################
     ##############################################################################################################
-
+    def chk_tfidf(self, text):
+        # #လက်တော့နဲ့ ဆိုင်/မဆိုင် စစ် 😋
+        # documents = set((text, ))
+        # tfidf_vectorizer = TfidfVectorizer(ngram_range=(1,3), min_df = 0, stop_words = 'english')
+        # #tfidf_matrix = tfidf_vectorizer.fit(documents)
+        # tfidf_matrix = tfidf_vectorizer.fit_transform(documents)
+        # #print(tfidf_matrix.shape)
+        # tfidf_ma = linear_kernel(tfidf_matrix[0:1], tfidf_matrix).flatten()
+        # cs = cosine_similarity(tfidf_matrix[0:1], tfidf_ma)
+        # # This was already calculated on the previous step, so we just use the value
+        # cos_sim = cs.flat[0]
+        # angle_in_radians = math.acos(cos_sim)
+        # #print(math.degrees(angle_in_radians))
+        # angle = math.degrees(angle_in_radians)
+        # if angle < 90:
+        #     return True
+        return True  
     ##############################################################################################################
     ##############################################################################################################
     ##############################################################################################################
