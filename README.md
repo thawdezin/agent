@@ -1,5 +1,6 @@
 # agent
-This is my B.E Thesis project.
+
+TFIDF based Crawling Agent with KNN Algorithm
 
 The entire project is made up of using MySQL, PHP and Python (Scrapy Framework).
 
