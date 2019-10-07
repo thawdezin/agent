@@ -21,15 +21,15 @@ hr { display:block; height:1px; border:0; border-top:1px solid #fff; margin:1em 
 <!--===============================================================  Logo, social and menu =====================================================================================-->
 <body>
 <div class="wrapper"> <a href="index.html" id="logo"><img src="img/logo.png" alt="">
-  <h1 class="accessibility">ResponseEve, a responsive template by SiGa</h1>
+  <h1 class="accessibility"></h1>
   </a>
   <h1> Mini Web Agent for Choosing the Right Product</h1>
-  <div class="social"> <a href="#"><img src="img/facebook.png" width="20" height="20" alt=""></a> <a href="#"><img src="img/twitter.png" width="20" height="20" alt=""></a> <a href="#"><img src="img/linkedin.png" width="20" height="20" alt=""></a> <a href="#"><img src="img/vcard.png" width="20" height="20" alt=""></a> <a href="#"><img src="img/picasa.png" width="20" height="20" alt=""></a> </div>
+
   <ul id="nav" class="main">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="find.html" class="active">Find items</a></li>
-    <li><a href="theory.html">Theory</a></li>
-    <li><a href="framework.html">Framework</a></li>
+    <li><a href="index.php">Home</a></li>
+    <li><a href="crawl.php" class="active">Crawl</a></li>
+    <li><a href="search.php">Find items</a></li>
+    <li><a href="https://scrapy.org/">Framework</a></li>
     <li><a href="https://www.facebook.com/thawdezin">Contact</a></li>
   </ul>
 </div>
@@ -50,52 +50,287 @@ hr { display:block; height:1px; border:0; border-top:1px solid #fff; margin:1em 
 <div class="wrapper">
   <div class="grids">
     <div class="grid-6 grid green">
-      <h2>Product for you</h2>
       <p> Here are the best matching with your input query.</p>
       <h5>Technology, method and Algorithms </h5>
-      <p>The system will use Web Crawling, Web Scraping, TF-IDF, text processing and K-Nearest Neighbors Algorithm to determine relevent results.</p>
+      <p>The system will use Web Crawling, Web Scraping, TF-IDF, text processing and Levenshtein Edit Distance Algorithm to determine relevent results.</p>
       <h5>Result</h5>
-      <p> You will see 3 laptops that match to your input query.</p>
+      <p> You will see the laptops that match to your input query.</p>
+      
     </div>
     <!--===============================================================  Style playground =====================================================================================-->
     <div class="grid-10 grid">
-      <h3>Relevent Product for you </h3>
+         
 
-      <h5>Product 1</h5>
-      Available url : <a href="http://royalsmartmm.com/hp-pavilion-14-ce2067tx-mineral-silver/"> Here </a>
-      <br />
-      Brand : HP
-      <br />
-      Price : 1320880
-      <br />
-      Processor : 8th Generation Intel Core i7
-      <br />
-      <br />
+        <?php
+        error_reporting(0);
+        if(isset($_POST['search']))
+        {
 
-      
+            $brand = $_POST['brand']; // make value
+            $price = $_POST['price'];
+            $hdd = $_POST['hdd'];
+            $ram = $_POST['ram'];
+            $processor = $_POST['processor'];
+            $quantity = $_POST['quantity'];
 
-      <h5>Product 2</h5>
-      Available url : <a href="http://royalsmartmm.com/hp-pavilion-14-ce2069tx-mineral-silver/"> Here </a>
-      <br />
-      Brand : HP
-      <br />
-      Price : 1260080
-      <br />
-      Processor : 8th Generation Intel Core i5
-      <br />
-      <br />
-      
-      <h5>Product 3</h5>
-      Available url : <a href="http://royalsmartmm.com/hp-pavilion-15-cs2062tx-warm-gold/"> Here </a>
-      <br />
-      Brand : HP
-      <br />
-      Price : 1047280
-      <br />
-      Processor : 8th Generation Intel Core i5
-      <br />
 
+            if ($price == null){
+              $price = "N/A";
+            }
+            if ($brand == null){
+              $brand = "N/A";
+            }
+            if ($hdd == null){
+              $hdd = "N/A";
+            }
+            if ($ram == null){
+              $ram = "N/A";
+            }
+            if ($processor == null){
+              $processor = "N/A";
+            }
+
+            echo "<h6> You're searching the laptop that match your requirement of below </h6>";
+            echo "<br />";
+            echo "Brand = ".$brand;
+            echo "<br />";
+            echo "Price = ".$price;
+            echo "<br />";
+            echo "HDD = ".$hdd;
+            echo "<br />";
+            echo "RAM = ".$ram;
+            echo "<br />";
+            echo "Processor = ".$processor;
+            echo "<br />";
+            echo "Quantity = ".$quantity;
+            echo "<br />";
+            echo "<br />";
+            echo "<hr />";
+            //************************************************************************************************* */
+            // အရေးကြီးသည့် Input များအားလုံး ဒီနေရာမှာ ရနေပါပြီ
+            //************************************************************************************************* */
+
+            if ($price != "N/A"){
+              if ($price == 'below 5 lakhs'){
+                require_once "config.php";
+                $copy_from_all_laptop = "INSERT INTO processing SELECT * FROM all_laptop WHERE all_laptop.price < 500000";
+                mysqli_query($link,$copy_from_all_laptop);
+                //echo "below 5 lakhs";
+              }
+              if ($price == 'between 5 and 7 lakhs'){
+                require_once "config.php";
+                $copy_from_all_laptop = "INSERT INTO processing SELECT * FROM all_laptop WHERE all_laptop.price > 499999 AND all_laptop.price < 700000";
+                mysqli_query($link,$copy_from_all_laptop);
+                //echo "between 5 and 7 lakhs";
+              }
+              if ($price == 'between 7 and 10 lakhs'){
+                require_once "config.php";
+                $copy_from_all_laptop = "INSERT INTO processing SELECT * FROM all_laptop WHERE all_laptop.price > 699999 AND all_laptop.price < 1000000";
+                mysqli_query($link,$copy_from_all_laptop);
+                //echo "between 7 and 10 lakhs";
+              }
+              if ($price == 'between 10 and 13 lakhs'){
+                require_once "config.php";
+                $copy_from_all_laptop = "INSERT INTO processing SELECT * FROM all_laptop WHERE all_laptop.price > 999999 AND all_laptop.price < 1300000";
+                mysqli_query($link,$copy_from_all_laptop);
+                //echo "between 10 and 13 lakhs";
+              }
+              if ($price == 'between 13 and 15 lakhs'){
+                require_once "config.php";
+                $copy_from_all_laptop = "INSERT INTO processing SELECT * FROM all_laptop WHERE all_laptop.price > 1299999 AND all_laptop.price < 1500000";
+                mysqli_query($link,$copy_from_all_laptop);
+                //echo "between 13 and 15 lakhs";
+              }
+              if ($price == 'over 15 lakhs'){
+                require_once "config.php";
+                $copy_from_all_laptop = "INSERT INTO processing SELECT * FROM all_laptop WHERE all_laptop.price > 1499999";
+                mysqli_query($link,$copy_from_all_laptop);
+                //echo "over 15 lakhs";
+              }
+            
+            // require_once "config.php";
+            // $insert_into_temp = "INSERT INTO temp SELECT * FROM processing WHERE processing.brand = '$brand'";
+            // mysqli_query($link,$insert_into_temp);
+
+            $input_requirement = null;
+
+            if($brand != 'N/A'){ //Brand ကိုရွေးသည်
+
+              require_once "config.php";
+              $insert_into_temp = "INSERT INTO temp SELECT * FROM processing WHERE processing.brand = '$brand'";
+              //echo "INSERT INTO temp SELECT * FROM processing WHERE processing.brand = '$brand'";
+              mysqli_query($link,$insert_into_temp);
+  
+              $input_requirement = null;
+
+
+              $input_requirement = $brand ." ". $price;
+              //echo " TESTING == ".$input_requirement;
+              //echo "<br />";
+            
+              for ($x = 1; $x <= $quantity; $x++) {
+                //echo "LOOP ".$x;
+                require_once "config.php";
+                $query = "SELECT MIN(price) AS min_price , id FROM temp";
+                $result = mysqli_query($link,$query);
+                
+                while($row=mysqli_fetch_array($result)){                                                 
+                  $from_table = $row['min_price'];
+                  $del_id = $row['id'];
+                  //echo "FROM DATABASE :: ".$from_table;
+                  //echo "<br /> and del id is ".$del_id;
+
+                  require_once "config.php";
+                  $query = "INSERT INTO result (brand, display, graphic, hdd, id, link, name, price, processor, ram) SELECT brand, display, graphic, hdd, id, link, name, price, processor, ram FROM temp WHERE id = '$del_id'";
+                  mysqli_query($link,$query);
+
+                  require_once "config.php";
+                  $del_query = "DELETE FROM temp WHERE id = '$del_id'";
+                  mysqli_query($link,$del_query);
+                  
+                }
+              }
+            //************************************************************************************************* */
+            // P B
+            //************************************************************************************************* */
+            }
+            
+            if($brand == 'N/A'){ //Brand ကိုမရွေးပါ
+
+              require_once "config.php";
+              $insert_into_temp = "INSERT INTO temp SELECT * FROM processing";
+              mysqli_query($link,$insert_into_temp);
+  
+              $input_requirement = null;
+
+              $input_requirement = $processor ." ". $ram ." ". $hdd;
+              //echo " TESTING == ".$input_requirement;
+              //echo "<br />";
+            
+              $shortest = -1;
+              for ($x = 1; $x <= $quantity; $x++) {
+                //echo "LOOP ".$x ." <br />";
+                require_once "config.php";
+                $query = "SELECT processor, ram, hdd, id FROM temp";
+                $result = mysqli_query($link,$query);
+                
+                while($row=mysqli_fetch_array($result)){
+                  
+                  $from_table = $row['processor'];
+                  $del_id = $row['id'];
+                  //echo "FROM DATABASE :: ".$from_table;
+                  //echo "<br /> and del id is ".$del_id;
+
+                  require_once "config.php";
+                  $query = "INSERT INTO result (brand, display, graphic, hdd, id, link, name, price, processor, ram) SELECT brand, display, graphic, hdd, id, link, name, price, processor, ram FROM temp WHERE id = '$del_id'";
+                  mysqli_query($link,$query);
+
+                  require_once "config.php";
+                  $del_query = "DELETE FROM temp WHERE id = '$del_id'";
+                  mysqli_query($link,$del_query);
+
+
+                  }
+                }
+
+            //************************************************************************************************* */
+            // P S
+            //************************************************************************************************* */
+            }
+            } // ဈေးနှုန်းပါဝင်သည့် ကုဒ်များ ဒီလိုင်းအထက်မှာ ရေးရန်
+            else{ // ဈေးနှုန်း မပါသည့် ကုဒ်များ အောက်ကလိုင်း 
+              $input_requirement = $brand." ".$processor." ".$ram." ".$hdd;
+
+              require_once "config.php";
+              $insert_into_temp = "INSERT INTO temp SELECT * FROM all_laptop WHERE all_laptop.brand = '$brand'";
+              mysqli_query($link,$insert_into_temp);
+  
+              //echo " TESTING == ".$input_requirement;
+              //echo "<br />";
+
+              $shortest = -1;
+              for ($x = 1; $x <= $quantity; $x++) {
+
+                //echo "LOOP ".$x;
+                require_once "config.php";
+                $query = "SELECT processor, ram, hdd, id FROM temp";
+                $result = mysqli_query($link,$query);
+
+                while($row=mysqli_fetch_array($result)){                                                 
+                  $from_table = $brand." ".$row['processor']." ".$row['ram']." ".$row['hdd'];
+                  $del_id = $row['id'];
+                  //echo "FROM DATABASE :: ".$from_table;
+                  //echo "<br /> and del id is ".$del_id;
+
+                  // calculate the distance between the input word,
+                  // and the current word
+                  $lev = levenshtein($input_requirement, $from_table);
+                  // check for an exact match
+                  if ($lev == 0) {
+                      // closest word is this one (exact match)
+                      $closest = $from_table;
+                      $shortest = 0;
+                      require_once "config.php";
+                      $query = "INSERT INTO result (brand, display, graphic, hdd, id, link, name, price, processor, ram) SELECT brand, display, graphic, hdd, id, link, name, price, processor, ram FROM temp WHERE id = '$del_id'";
+                      //echo "INSERT INTO result (brand, display, graphic, hdd, id, link, name, price, processor, ram) SELECT brand, display, graphic, hdd, id, link, name, price, processor, ram FROM temp WHERE id = '$del_id'";
+                      mysqli_query($link,$query);
     
+                      require_once "config.php";
+                      $del_query = "DELETE FROM temp WHERE id = '$del_id'";
+                      //echo "<br />";
+                      //echo "DELETE FROM temp WHERE id = '$del_id'";
+                      mysqli_query($link,$del_query);   
+                      // break out of the loop; we've found an exact match
+                      break;
+                  }
+                  // if this distance is less than the next found shortest
+                  // distance, OR if a next shortest word has not yet been found
+                  if ($lev <= $shortest || $shortest < 0) {
+                      // set the closest match, and shortest distance
+                      $closest  = $from_table; # input string က ဟာကို တစ်ခုချင်းလျော့ပြီး ဒီကနေ ညီတဲ့ တူတဲ့တစ်ခုကို ဖြုတ်ပေးနိုင်ရင် ရပြီ
+                      $shortest = $lev;
+                  }
+                  
+                  require_once "config.php";
+                  $query = "INSERT INTO result (brand, display, graphic, hdd, id, link, name, price, processor, ram) SELECT brand, display, graphic, hdd, id, link, name, price, processor, ram FROM temp WHERE id = '$del_id'";
+                  //echo "INSERT INTO result (brand, display, graphic, hdd, id, link, name, price, processor, ram) SELECT brand, display, graphic, hdd, id, link, name, price, processor, ram FROM temp WHERE id = '$del_id'";
+                  mysqli_query($link,$query);
+
+                  require_once "config.php";
+                  $del_query = "DELETE FROM temp WHERE id = '$del_id'";
+                  //echo "<br />";
+                  //echo "DELETE FROM temp WHERE id = '$del_id'";
+                  mysqli_query($link,$del_query);   
+                }
+
+              }
+
+            //echo "brand and spec";
+            //************************************************************************************************* */
+            // B S
+            //************************************************************************************************* */
+            } // Brand && Spec ဆို ဒီလိုင်းအထက်မှာရေး
+
+
+            //************************************************************************************************* */
+            // ဤနေရာသို့ ရောက်ရှိချိန်တွင် သင့်၏ ဘွဲ့ယူကျမ်းဟုခေါ်သော Thesisကြီး အောင်မြင်စွာ ပြီးဆုံးပါပြီ သော်ဒီဇင်လေးရေ 😆😆😆
+            //************************************************************************************************* */
+
+        }//ဒီတွန့်ကွင်းလေးထဲမှာပဲ ကုဒ်အားလုံးရေးဖို့ လိုပါသည်။
+
+        require_once "config.php";
+        $result_query = "SELECT * FROM result LIMIT ".$quantity;
+        $final_result = mysqli_query($link,$result_query);
+        
+        echo "<table> <tr> <th> Best Suitable laptops for you </th> </tr>";
+        while($row=mysqli_fetch_array($final_result)){                                                 
+          echo "<tr> <td> <a href=' ".$row['link']." '> ". $row['link'] . " </a> </td> </tr> ";
+        }
+        echo "</table>";
+
+        // <!-- // ဒါပေမဲ့လည်း တစ်ခါတစ်လေ တွန့်ကွင်း အပြင်ထွက် ရေးရတာမျိုးလည်း ရှိနိုင်တာပေါ့ 🤣🤣🤣 -->
+        ?> 
+        
 
     </div>
     <!--end of grid-10-->
@@ -107,7 +342,7 @@ hr { display:block; height:1px; border:0; border-top:1px solid #fff; margin:1em 
 <!--===============================================================  Bottom content =====================================================================================-->
 <div class="wrapper">
   <div class="grids">
-    <div class="grid-4 grid"> <img src="img/small-img1.jpg" alt="">
+    <div class="grid-4 grid"> <img src="img/crawl.jpg" alt="Web Crawling">
       <h4 class="text-center">Web Crawling</h4>
       <p>A Web crawler, sometimes called a spider or spiderbot and often shortened to crawler, is an Internet bot that systematically browses the World Wide Web, typically for the purpose of Web indexing (web spidering).
 
@@ -115,15 +350,15 @@ hr { display:block; height:1px; border:0; border-top:1px solid #fff; margin:1em 
         
         Crawlers consume resources on visited systems and often visit sites without approval.</p>
     </div>
-    <div class="grid-4 grid"> <img src="img/small-img2.jpg" alt="">
+    <div class="grid-4 grid"> <img src="img/scrape.jpg" alt="Web Scraping">
       <h4 class="text-center">Web Scraping</h4>
       <p>Web scraping, web harvesting, or web data extraction is data scraping used for extracting data from websites. Web scraping software may access the World Wide Web directly using the Hypertext Transfer Protocol, or through a web browser. While web scraping can be done manually by a software user, the term typically refers to automated processes implemented using a bot or web crawler. It is a form of copying, in which specific data is gathered and copied from the web, typically into a central local database or spreadsheet, for later retrieval or analysis.</p>
     </div>
-    <div class="grid-4 grid"> <img src="img/small-img3.jpg" alt="">
+    <div class="grid-4 grid"> <img src="img/tfidf.jpg" alt="">
       <h4 class="text-center">TFIDF</h4>
       <p>In information retrieval, tf–idf or TFIDF, short for term frequency–inverse document frequency, is a numerical statistic that is intended to reflect how important a word is to a document in a collection or corpus. It is often used as a weighting factor in searches of information retrieval, text mining, and user modeling. The tf–idf value increases proportionally to the number of times a word appears in the document and is offset by the number of documents in the corpus that contain the word, which helps to adjust for the fact that some words appear more frequently in general. tf–idf is one of the most popular term-weighting schemes today; 83% of text-based recommender systems in digital libraries use tf–idf.</p>
     </div>
-    <div class="grid-4 grid"> <img src="img/small-img4.jpg" alt="">
+    <div class="grid-4 grid"> <img src="img/knn.jpg" alt="">
       <h4 class="text-center">K-Nearest Neighbors</h4>
       <p>k-NN is a type of instance-based learning, or lazy learning, where the function is only approximated locally and all computation is deferred until classification.
 
@@ -140,14 +375,14 @@ hr { display:block; height:1px; border:0; border-top:1px solid #fff; margin:1em 
   <div id="footer">
     <div class="grids">
       <div class="grid-5 grid text-center">
-        <p>&copy; Eve 2012 by <a target="_blank" href="http://sg-layout.com">SiGa</a></p>
-      </div>
-      <div class="grid-6 grid text-center">
-        <p></p>
-      </div>
-      <div class="grid-5 grid text-center">
-        <p>Contact me <a href="https://www.github.com/thawdezin">here</a></p>
-      </div>
+          <p>&copy;  <a target="_blank" href="">Thaw De Zin</a></p>
+        </div>
+        <div class="grid-6 grid text-center">
+          <p>6IST-66</p>
+        </div>
+        <div class="grid-5 grid text-center">
+          <p>Contact me <a href="https://www.facebook.com/thawdezin">here</a></p>
+        </div>
     </div>
     <!--end of grids-->
   </div>

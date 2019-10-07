@@ -14,8 +14,11 @@ def rrm_tags(self, text):
 
 class AllSpider(CrawlSpider):
     name = "all"
-    allowed_domains = ["linnonlinestore.com"]#,"sln-myanmar.com","royalsmartmm.com","kmdshopping.com"]
-    start_urls = ["http://www.linnonlinestore.com/hp-15-cu0014tx-i5-laptop/"]#,"http://www.kmdshopping.com","http://www.sln-myanmar.com/","http://www.royalsmartmm.com/"]
+    allowed_domains = ["linnonlinestore.com","sln-myanmar.com","royalsmartmm.com"] #,"kmdshopping.com"]
+    start_urls = ["http://www.linnonlinestore.com/hp-15-cu0014tx-i5-laptop/","http://www.sln-myanmar.com/","http://www.royalsmartmm.com/"] #,"http://www.kmdshopping.com"
+
+    #allowed_domains = ["royalsmartmm.com"] #,"kmdshopping.com"]
+    #start_urls = ["http://www.royalsmartmm.com/"] #,"http://www.kmdshopping.com"
 
     rules = (
         #Rule(LinkExtractor(deny_domains=["store-tp0iths.mybigcommerce.com"]), callback='parse_page', follow=True),
@@ -39,7 +42,7 @@ class AllSpider(CrawlSpider):
                 return item
 
         # if current_url == 'http://www.kmdshopping.com/':
-        #     print("22222222222222222222222222222")
+        #     #print("22222222222222222222222222222")
         #     text = AgentItem.rm_tags(self, response.url)
         #     text_pass = AgentItem.chk_tfidf(self, text)
             
@@ -47,23 +50,23 @@ class AllSpider(CrawlSpider):
         #         item = AgentItem.kmd_method(self, response, item)
         #         return item
     
-        # if current_url == 'http://sln-myanmar.com/':
-        #     print("3333333333333333333333333333")
-        #     text = AgentItem.rm_tags(self, response.url)
-        #     text_pass = AgentItem.chk_tfidf(self, text)
+        if current_url == 'http://sln-myanmar.com/':
+            #print("3333333333333333333333333333")
+            text = AgentItem.rm_tags(self, response.url)
+            text_pass = AgentItem.chk_tfidf(self, text)
             
-        #     if text_pass == True:
-        #         item = AgentItem.sln_method(self, response, item)
-        #         return item
+            if text_pass == True:
+                item = AgentItem.sln_method(self, response, item)
+                return item
         
-        # if current_url == 'http://royalsmartmm.com/':
-        #     print("444444444444444444444444444")
-        #     text = AgentItem.rm_tags(self, response.url)
-        #     text_pass = AgentItem.chk_tfidf(self, text)
+        if current_url == 'http://royalsmartmm.com/':
+            #print("11111111111111111111111111111111111")
+            text = AgentItem.rm_tags(self, response.url)
+            text_pass = AgentItem.chk_tfidf(self, text)
             
-        #     if text_pass == True:
-        #         item = AgentItem.royal_method(self, response, item)
-        #         return item
+            if text_pass == True:
+                item = AgentItem.royal_method(self, response, item)
+                return item
             
         
         #return item

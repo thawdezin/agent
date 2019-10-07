@@ -88,12 +88,16 @@ class AgentItem(scrapy.Item):
             for item_price in item_price_list:
                 if "Ks" in item_price or "ks" in item_price:
                     item_price = item_price.replace("Ks",'')
+                    item_price = item_price.replace(",",'')
+                    #item_price = float(item_price)
                     input_item['price'] = item_price
                     haha += 1
                 if "$" in item_price:
                     item_price = item_price.replace("$",'')
-                    item_price = float(item_price)
-                    item_price *= 1525
+                    item_price = item_price.replace(",",'')
+                    #item_price = float(item_price)
+                    #print(type(item_price)," <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< ")
+                    #item_price = item_price * 1525
                     input_item['price'] = item_price
                     haha += 1
             #__________________________________________________________________________________
@@ -196,7 +200,7 @@ class AgentItem(scrapy.Item):
     ##############################################################################################################
     def sln_method(self, resp, input_item):
         #lst = ['Acer', 'Swift', 'Aspire', 'Core', 'i5', 'i7', 'i9', 'Gaming', 'Raider', 'Stealth', 'RTX', 'GTX'] # Pen is Desktop version
-        print("I am in sln_method")
+        #print("I am in sln_method")
         sln_header = resp.css(".title-subheader::text")[0].extract()
         sln_header = ''.join(str(e) for e in sln_header)
         sln_header = sln_header.replace("\r",'')
@@ -217,12 +221,13 @@ class AgentItem(scrapy.Item):
                 #အိပ်ချင်တယ် ခေါင်းကိုက်တယ် 😭😭😭
 
         if "tc" in item_title or "xc" in item_title or "(pen)" in item_title:
-            print("Desktop")
+            #print("Desktop")
             count = 0
 
         if sln_header == "Blog Single" and count > 1:
             haha = 0
             #print("Count is greater than 1 and Count iBBBBBBBB ")
+            #print("2222222222222222222222222222222222222222222222222222222")
             input_item['link'] = resp.url
             input_item['name'] = item_title # OK for title
             if "acer" in item_title:
@@ -231,10 +236,10 @@ class AgentItem(scrapy.Item):
             sln_item_detail = resp.css("li::text").extract()
             for sln_detail in sln_item_detail:
                 sln_detail_lower = sln_detail.lower()
-                
+                #print("111111111111111111111111111111111111111111111111111")
                 if "processor" in sln_detail_lower:
                     input_item['processor'] = sln_detail
-                    print("Keep trying ")
+                    #print("Keep trying ")
                     haha += 1
                 
                 if "ddr4" in sln_detail_lower or "ddr3" in sln_detail_lower:
@@ -259,7 +264,7 @@ class AgentItem(scrapy.Item):
                     for sln_para in sln_item_at_p_lower:
                         if "processor" in sln_para or "hdd" in sln_para or "nvidia" in sln_para or "ddr4" in sln_para:
                             for sln_detail in sln_item_at_p:
-                                print("Gold bro gold gold hahahahhahahhahahah 🤣")
+                                #print("Gold bro gold gold hahahahhahahhahahah 🤣")
                                 sln_detail_lower = sln_detail.lower()
                                 if "processor" in sln_detail_lower:
                                     input_item['processor'] = sln_detail
@@ -284,7 +289,18 @@ class AgentItem(scrapy.Item):
             #__________________________________________________________________________________
             return input_item
         #print(datetime.datetime.now())
-            print("SLNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN")
+            #print("")
+        
+        print("SLNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN Start")
+        print("Brand: ",input_item['brand'])
+        print("Display: ",input_item['display'])
+        print("Graphic: ",input_item['graphic'])
+        print("HDD: ",input_item['hdd'])            
+        print("Link: ",input_item['link'])
+        print("Name: ",input_item['name'])
+        print("Price: ",input_item['price'])
+        print("Processor: ",input_item['processor'])
+        print("SLNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN End")
         return input_item
 
 
@@ -302,14 +318,15 @@ class AgentItem(scrapy.Item):
     def royal_method(self, resp, input_item):
         rs_page_entry = resp.css(".entry-title::text").extract()
         rs_li = resp.css("li::text").extract()
+        #print("22222222222222222222222222222222222222")
         
         rs_page_list = resp.css("strong::text").extract()
         for rs_page_ in rs_page_list:
             rs_page_ = rs_page_.lower()
-            print(resp.url)
+            #print(resp.url)
             if "product specification" in rs_page_:
                 
-                #print("OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK")
+                #print("33333333333333333333333333333333333333333333333333333333333333333333333333")
                 input_item['name'] = rs_page_entry
                 input_item['link'] = resp.url
                 input_item['brand'] = "HP"
@@ -353,9 +370,8 @@ class AgentItem(scrapy.Item):
                     
                     if "Radeon" in every_li or "Nvidia" in every_li or "NVIDIA" in every_li:
                         input_item['graphic'] = every_li
-                        print("*****************************************************")
                 
-                print("OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK")
+                #print("444444444444444444444444444444444444444444444444444444444444444444")
             if "Price" in rs_page_ and rs_page_entry is not None: 
                 rs_price = rs_page_
                 rs_price = rs_price.replace("Price",'')
@@ -363,6 +379,17 @@ class AgentItem(scrapy.Item):
                 rs_price = rs_price.replace(":",'')
                 rs_price = rs_price.replace(" ",'')
                 input_item['price'] = rs_price
+        
+        print("RSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS Start")
+        print("Brand: ",input_item['brand'])
+        print("Display: ",input_item['display'])
+        print("Graphic: ",input_item['graphic'])
+        print("HDD: ",input_item['hdd'])            
+        print("Link: ",input_item['link'])
+        print("Name: ",input_item['name'])
+        print("Price: ",input_item['price'])
+        print("Processor: ",input_item['processor'])
+        print("RSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS End")
         return input_item
 
     #####################################################
@@ -379,22 +406,46 @@ class AgentItem(scrapy.Item):
     ##############################################################################################################
     ##############################################################################################################
     def chk_tfidf(self, text):
-        # #လက်တော့နဲ့ ဆိုင်/မဆိုင် စစ် 😋
-        # documents = set((text, ))
-        # tfidf_vectorizer = TfidfVectorizer(ngram_range=(1,3), min_df = 0, stop_words = 'english')
-        # #tfidf_matrix = tfidf_vectorizer.fit(documents)
-        # tfidf_matrix = tfidf_vectorizer.fit_transform(documents)
-        # #print(tfidf_matrix.shape)
-        # tfidf_ma = linear_kernel(tfidf_matrix[0:1], tfidf_matrix).flatten()
-        # cs = cosine_similarity(tfidf_matrix[0:1], tfidf_ma)
-        # # This was already calculated on the previous step, so we just use the value
-        # cos_sim = cs.flat[0]
-        # angle_in_radians = math.acos(cos_sim)
-        # #print(math.degrees(angle_in_radians))
-        # angle = math.degrees(angle_in_radians)
-        # if angle < 90:
-        #     return True
-        return True  
+        base_laptop_term = "laptop laptop laptop acer dell msi hp asus lenovo nvidia intel core radeon"
+        webpage_input = text
+
+        webpage_input = remove_tags(webpage_input).replace("\n",' ')
+
+        webpage_input = webpage_input.lower()
+        webpage_input = webpage_input.strip()
+        webpage_input = webpage_input.replace("{","")
+        webpage_input = webpage_input.replace("}","")
+        webpage_input = webpage_input.replace("/","")
+        webpage_input = webpage_input.replace(";","")
+        webpage_input = webpage_input.replace("'","")
+        webpage_input = webpage_input.replace(":","")
+        webpage_input = webpage_input.replace(";","")
+        webpage_input = webpage_input.replace("(","")
+        webpage_input = webpage_input.replace(")","")
+        webpage_input = webpage_input.replace(",","")
+        webpage_input = webpage_input.replace("#","")
+        webpage_input = webpage_input.replace("$","")
+
+
+        documents = (base_laptop_term,webpage_input)
+
+        tfidf_vectorizer = TfidfVectorizer()
+        tfidf_matrix = tfidf_vectorizer.fit_transform(documents)
+        cos_s = cosine_similarity(tfidf_matrix[0:1], tfidf_matrix)
+
+        actual_value = float(cos_s.flat[1])
+        #print("Value for cosine similarity ", actual_value)
+
+        # This was already calculated on the previous step, so we just use the value
+        cos_sim = actual_value
+        angle_in_radians = math.acos(cos_sim)
+        final_decision_tfidf_check = math.degrees(angle_in_radians)
+
+        if final_decision_tfidf_check > 90:
+            return False
+        else:
+            return True
+        # return True  
     ##############################################################################################################
     ##############################################################################################################
     ##############################################################################################################

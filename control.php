@@ -25,15 +25,14 @@ hr { display:block; height:1px; border:0; border-top:1px solid #fff; margin:1em 
 <div class="wrapper"> <a href="index.html" id="logo"><img src="img/logo.png" alt="">
   <h1 class="accessibility">ResponseEve, a responsive template by SiGa</h1>
   </a>
-  <div class="social"> <a href="#"><img src="img/facebook.png" width="20" height="20" alt=""></a> <a href="#"><img src="img/twitter.png" width="20" height="20" alt=""></a> <a href="#"><img src="img/linkedin.png" width="20" height="20" alt=""></a> <a href="#"><img src="img/vcard.png" width="20" height="20" alt=""></a> <a href="#"><img src="img/picasa.png" width="20" height="20" alt=""></a> </div>
-  <ul id="nav" class="main">
+  <!-- <ul id="nav" class="main">
     <li><a href="index.html">Home </a></li>
     <li><a href="subpage.html">Subpage</a></li>
     <li><a href="#">Dummy 1</a></li>
     <li><a href="#">Dummy 2</a></li>
     <li><a href="#">Dummy 3</a></li>
     <li><a href="contact.html" class="active">Contact</a></li>
-  </ul>
+  </ul> -->
 </div>
 <!--end of wrapper div-->
 <div class="clear"></div>
@@ -57,14 +56,25 @@ hr { display:block; height:1px; border:0; border-top:1px solid #fff; margin:1em 
       $dbc = mysqli_connect('localhost', 'root', 'dede', 'agent') or die('Error connecting to MySQL server.'); 
       if(isset($_POST['submit_button']))
       {
-          mysqli_query($dbc, 'TRUNCATE TABLE lin');
+          mysqli_query($dbc, 'TRUNCATE TABLE laptop');
+          mysqli_query($dbc, 'TRUNCATE TABLE step');
           header("Location: " . $_SERVER['PHP_SELF']);
           exit();
       }
-
+      if(isset($_POST['result_button']))
+      {
+          mysqli_query($dbc, 'TRUNCATE TABLE temp');
+          mysqli_query($dbc, 'TRUNCATE TABLE result');
+          header("Location: " . $_SERVER['PHP_SELF']);
+          exit();
+      }
       ?>
       <form method="post" action="">
-          <input name="submit_button" type="submit" value=" Truncate Table " />
+          <input name="submit_button" type="submit" value=" Truncate Laptop Table and Step table" />
+      </form>
+      <br />
+      <form method="post" action="">
+          <input name="result_button" type="submit" value=" Truncate Result Table and Temp table" />
       </form>
     </div>
     <!--end of grid-10-->

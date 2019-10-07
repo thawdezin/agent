@@ -22,15 +22,15 @@ hr { display:block; height:1px; border:0; border-top:1px solid #fff; margin:1em 
 </head>
 <!--===============================================================  Logo, social and menu =====================================================================================-->
 <body>
-<div class="wrapper"> <a href="index.php" id="logo"><img src="img/logo.gif" alt="">
+<div class="wrapper"> <a href="index.html" id="logo"><img src="img/logo.png" alt="">
   <h1 class="accessibility"></h1>
   </a>
-  
+  <div class="social"> <a href="#"><img src="img/facebook.png" width="20" height="20" alt=""></a> <a href="#"><img src="img/twitter.png" width="20" height="20" alt=""></a> <a href="#"><img src="img/linkedin.png" width="20" height="20" alt=""></a> <a href="#"><img src="img/vcard.png" width="20" height="20" alt=""></a> <a href="#"><img src="img/picasa.png" width="20" height="20" alt=""></a> </div>
   <ul id="nav" class="main">
     <li><a href="index.php">Home</a></li>
     <li><a href="crawl.php" class="active">Crawl</a></li>
-    <li><a href="search.php">Find items</a></li>
-    <li><a href="https://scrapy.org/">Framework</a></li>
+    <li><a href="find.php">Find items</a></li>
+    <li><a href="framework.php">Framework</a></li>
     <li><a href="https://www.facebook.com/thawdezin">Contact</a></li>
   </ul>
 </div>

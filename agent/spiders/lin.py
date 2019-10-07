@@ -12,45 +12,61 @@ import re
 def rrm_tags(self, text):
     return remove_tags(text).replace("\n",' ')
 
-class LinnSpider(CrawlSpider):
-    name = "lin"
-    allowed_domains = ["linnonlinestore.com","sln-myanmar.com","royalsmartmm.com"]
-    start_urls = ["http://www.linnonlinestore.com/"]#,"http://sln-myanmar.com/","http://royalsmartmm.com"]
+class AllSpider(CrawlSpider):
+    name = "sln"
+    allowed_domains = ["sln-myanmar.com"] #,"kmdshopping.com"]
+    start_urls = ["http://www.sln-myanmar.com/"] #,"http://www.kmdshopping.com"
+
+    #allowed_domains = ["royalsmartmm.com"] #,"kmdshopping.com"]
+    #start_urls = ["http://www.royalsmartmm.com/"] #,"http://www.kmdshopping.com"
 
     rules = (
+        #Rule(LinkExtractor(deny_domains=["store-tp0iths.mybigcommerce.com"]), callback='parse_page', follow=True),
         Rule(LinkExtractor(deny=[r'.*?setCurrencyId.*']), callback='parse_page', follow=True),
-        #Rule(LinkExtractor(deny_domains=("store-tp0iths.mybigcommerce.com")), callback='parse_page', follow=True),
     )
 
     def parse_page(self, response):
         #response.replace(url='http://www.linnonlinestore.com/acer-aspire-e5-476-i3-laptop/')
         item = AgentItem()
+        #AgentItem.del_log_file()
         #print(response.url)
         current_url = AgentItem.get_domain(self, response.url)
-        if current_url == 'http://www.linnonlinestore.com/':
-            #print("111111111111111111111111111111")
-            text = AgentItem.rm_tags(self, response.url)
-            text_pass = AgentItem.chk_tfidf(self, text)
-            
-            if text_pass == True:
-                #print("Hey, Here, It's me <<<<<<<<<<<<<<<<<<<<<<<<")
-                item = AgentItem.lin_method(self, response, item)
-                return item
-            
-
-        # if current_url == 'http://sln-myanmar.com/':
-        #     print("2222222222222222222222222222222")
+        # if current_url == 'http://www.linnonlinestore.com/':
+        #     #print("111111111111111111111111111111")
         #     text = AgentItem.rm_tags(self, response.url)
         #     text_pass = AgentItem.chk_tfidf(self, text)
             
         #     if text_pass == True:
         #         #print("Hey, Here, It's me <<<<<<<<<<<<<<<<<<<<<<<<")
-        #         item = AgentItem.sln_method(self, response, item)
+        #         item = AgentItem.lin_method(self, response, item)
         #         return item
 
-        # if current_url == 'http://royalsmartmm.com':
-        #     print("3333333333333333333333333333333")
+        # if current_url == 'http://www.kmdshopping.com/':
+        #     #print("22222222222222222222222222222")
         #     text = AgentItem.rm_tags(self, response.url)
+        #     text_pass = AgentItem.chk_tfidf(self, text)
+            
+        #     if text_pass == True:
+        #         item = AgentItem.kmd_method(self, response, item)
+        #         return item
+    
+        if current_url == 'http://sln-myanmar.com/':
+            print("3333333333333333333333333333")
+            text = AgentItem.rm_tags(self, response.url)
+            text_pass = AgentItem.chk_tfidf(self, text)
+            
+            if text_pass == True:
+                item = AgentItem.sln_method(self, response, item)
+                return item
+        
+        # if current_url == 'http://royalsmartmm.com/':
+        #     print("11111111111111111111111111111111111")
+        #     text = AgentItem.rm_tags(self, response.url)
+        #     text_pass = AgentItem.chk_tfidf(self, text)
+            
+        #     if text_pass == True:
+        #         item = AgentItem.royal_method(self, response, item)
+        #         return item
+            
         
         #return item
-        

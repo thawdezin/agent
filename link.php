@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Mini Agent | Crawl</title>
+<title>Mini Agent | Links</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
 <link rel="stylesheet" href="css/inuit.css">
@@ -25,12 +25,12 @@ hr { display:block; height:1px; border:0; border-top:1px solid #fff; margin:1em 
 <div class="wrapper"> <a href="index.html" id="logo"><img src="img/logo.png" alt="">
   <h1 class="accessibility"></h1>
   </a>
-  <div class="social"> <a href="#"><img src="img/facebook.png" width="20" height="20" alt=""></a> <a href="#"><img src="img/twitter.png" width="20" height="20" alt=""></a> <a href="#"><img src="img/linkedin.png" width="20" height="20" alt=""></a> <a href="#"><img src="img/vcard.png" width="20" height="20" alt=""></a> <a href="#"><img src="img/picasa.png" width="20" height="20" alt=""></a> </div>
+
   <ul id="nav" class="main">
     <li><a href="index.php">Home</a></li>
-    <li><a href="crawl.php" class="active">Crawl</a></li>
-    <li><a href="find.php">Find items</a></li>
-    <li><a href="framework.php">Framework</a></li>
+    <li><a href="crawl.php">Crawl</a></li>
+    <li><a href="search.php">Find items</a></li>
+    <li><a href="https://www.scrapy.org">Framework</a></li>
     <li><a href="https://www.facebook.com/thawdezin">Contact</a></li>
   </ul>
 </div>

@@ -1,0 +1,1020 @@
+2019-08-09 11:59:51 [scrapy.utils.log] INFO: Scrapy 1.5.2 started (bot: ^_^ Goblok ^_^)
+2019-08-09 11:59:51 [scrapy.utils.log] INFO: Versions: lxml 4.3.4.0, libxml2 2.9.9, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 19.2.0, Python 3.7.3 (default, Apr 24 2019, 15:29:51) [MSC v.1915 64 bit (AMD64)], pyOpenSSL 19.0.0 (OpenSSL 1.1.1  11 Sep 2018), cryptography 2.7, Platform Windows-10-10.0.18362-SP0
+2019-08-09 11:59:51 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': '^_^ Goblok ^_^', 'CONCURRENT_REQUESTS': 32, 'LOG_FILE': 'C:\\xampp\\htdocs\\agent\\test.txt', 'NEWSPIDER_MODULE': 'agent.spiders', 'REACTOR_THREADPOOL_MAXSIZE': 20, 'SPIDER_MODULES': ['agent.spiders'], 'USER_AGENT': 'UTYCC Student from Myanmar(Burma)'}
+2019-08-09 11:59:51 [scrapy.extensions.telnet] INFO: Telnet Password: 35f44594d8874d3e
+2019-08-09 11:59:51 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2019-08-09 11:59:52 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2019-08-09 11:59:52 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2019-08-09 11:59:52 [scrapy.middleware] INFO: Enabled item pipelines:
+['agent.pipelines.AgentPipeline', 'agent.pipelines.JsonWithEncodingPipeline']
+2019-08-09 11:59:52 [scrapy.core.engine] INFO: Spider opened
+2019-08-09 11:59:53 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-08-09 11:59:53 [scrapy.extensions.telnet] DEBUG: Telnet console listening on 127.0.0.1:6023
+2019-08-09 11:59:55 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/> (referer: None)
+2019-08-09 11:59:55 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://royalsmartmm.com/hp14-15/> (referer: None)
+2019-08-09 11:59:55 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://royalsmartmm.com> (referer: None)
+2019-08-09 11:59:55 [scrapy.spidermiddlewares.offsite] DEBUG: Filtered offsite request to 'twitter.com': <GET https://twitter.com/RoyalSmartMM1>
+2019-08-09 11:59:55 [scrapy.spidermiddlewares.offsite] DEBUG: Filtered offsite request to 'www.facebook.com': <GET https://www.facebook.com/hpmyanmar/>
+2019-08-09 11:59:55 [scrapy.dupefilters] DEBUG: Filtered duplicate request: <GET http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/#respond> - no more duplicates will be shown (see DUPEFILTER_DEBUG to show all duplicates)
+2019-08-09 11:59:55 [scrapy.spidermiddlewares.offsite] DEBUG: Filtered offsite request to 'akismet.com': <GET https://akismet.com/privacy/>
+2019-08-09 11:59:55 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://royalsmartmm.com> (referer: None)
+2019-08-09 11:59:55 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://royalsmartmm.com/cdn-cgi/l/email-protection#315e575758525471425c5043451c5c48505f5c50431f525e5c0e6244535b5452450c79545d5d5e140301505650585f> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+2019-08-09 11:59:55 [scrapy.core.scraper] ERROR: Spider error processing <GET http://royalsmartmm.com/cdn-cgi/l/email-protection#315e575758525471425c5043451c5c48505f5c50431f525e5c0e6244535b5452450c79545d5d5e140301505650585f> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+Traceback (most recent call last):
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spiders\crawl.py", line 76, in _parse_response
+    cb_res = callback(response, **cb_kwargs) or ()
+  File "C:\Users\thawd\thesis\agent\agent\spiders\rs.py", line 51, in parse_page
+    text_pass = AgentItem.chk_tfidf(self, text)
+  File "C:\Users\thawd\thesis\agent\agent\items.py", line 49, in chk_tfidf
+    cs = cosine_similarity(tfidf_matrix[0:1], tfidf_ma)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 1027, in cosine_similarity
+    X, Y = check_pairwise_arrays(X, Y)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 114, in check_pairwise_arrays
+    estimator=estimator)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\utils\validation.py", line 521, in check_array
+    "if it contains a single sample.".format(array))
+ValueError: Expected 2D array, got 1D array instead:
+array=[1.].
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+2019-08-09 11:59:56 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://royalsmartmm.com/company-overview/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+2019-08-09 11:59:56 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://royalsmartmm.com/category/promotion/feb-promo-19/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+2019-08-09 11:59:56 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://royalsmartmm.com/category/promotion/april-promo-2019/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+2019-08-09 11:59:56 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://royalsmartmm.com/contact/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+2019-08-09 11:59:57 [scrapy.core.scraper] ERROR: Spider error processing <GET http://royalsmartmm.com/company-overview/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+Traceback (most recent call last):
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spiders\crawl.py", line 76, in _parse_response
+    cb_res = callback(response, **cb_kwargs) or ()
+  File "C:\Users\thawd\thesis\agent\agent\spiders\rs.py", line 51, in parse_page
+    text_pass = AgentItem.chk_tfidf(self, text)
+  File "C:\Users\thawd\thesis\agent\agent\items.py", line 49, in chk_tfidf
+    cs = cosine_similarity(tfidf_matrix[0:1], tfidf_ma)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 1027, in cosine_similarity
+    X, Y = check_pairwise_arrays(X, Y)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 114, in check_pairwise_arrays
+    estimator=estimator)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\utils\validation.py", line 521, in check_array
+    "if it contains a single sample.".format(array))
+ValueError: Expected 2D array, got 1D array instead:
+array=[1.].
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+2019-08-09 11:59:57 [scrapy.core.scraper] ERROR: Spider error processing <GET http://royalsmartmm.com/category/promotion/feb-promo-19/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+Traceback (most recent call last):
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spiders\crawl.py", line 76, in _parse_response
+    cb_res = callback(response, **cb_kwargs) or ()
+  File "C:\Users\thawd\thesis\agent\agent\spiders\rs.py", line 51, in parse_page
+    text_pass = AgentItem.chk_tfidf(self, text)
+  File "C:\Users\thawd\thesis\agent\agent\items.py", line 49, in chk_tfidf
+    cs = cosine_similarity(tfidf_matrix[0:1], tfidf_ma)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 1027, in cosine_similarity
+    X, Y = check_pairwise_arrays(X, Y)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 114, in check_pairwise_arrays
+    estimator=estimator)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\utils\validation.py", line 521, in check_array
+    "if it contains a single sample.".format(array))
+ValueError: Expected 2D array, got 1D array instead:
+array=[1.].
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+2019-08-09 11:59:57 [scrapy.core.scraper] ERROR: Spider error processing <GET http://royalsmartmm.com/category/promotion/april-promo-2019/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+Traceback (most recent call last):
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spiders\crawl.py", line 76, in _parse_response
+    cb_res = callback(response, **cb_kwargs) or ()
+  File "C:\Users\thawd\thesis\agent\agent\spiders\rs.py", line 51, in parse_page
+    text_pass = AgentItem.chk_tfidf(self, text)
+  File "C:\Users\thawd\thesis\agent\agent\items.py", line 49, in chk_tfidf
+    cs = cosine_similarity(tfidf_matrix[0:1], tfidf_ma)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 1027, in cosine_similarity
+    X, Y = check_pairwise_arrays(X, Y)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 114, in check_pairwise_arrays
+    estimator=estimator)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\utils\validation.py", line 521, in check_array
+    "if it contains a single sample.".format(array))
+ValueError: Expected 2D array, got 1D array instead:
+array=[1.].
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+2019-08-09 11:59:57 [scrapy.core.scraper] ERROR: Spider error processing <GET http://royalsmartmm.com/contact/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+Traceback (most recent call last):
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spiders\crawl.py", line 76, in _parse_response
+    cb_res = callback(response, **cb_kwargs) or ()
+  File "C:\Users\thawd\thesis\agent\agent\spiders\rs.py", line 51, in parse_page
+    text_pass = AgentItem.chk_tfidf(self, text)
+  File "C:\Users\thawd\thesis\agent\agent\items.py", line 49, in chk_tfidf
+    cs = cosine_similarity(tfidf_matrix[0:1], tfidf_ma)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 1027, in cosine_similarity
+    X, Y = check_pairwise_arrays(X, Y)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 114, in check_pairwise_arrays
+    estimator=estimator)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\utils\validation.py", line 521, in check_array
+    "if it contains a single sample.".format(array))
+ValueError: Expected 2D array, got 1D array instead:
+array=[1.].
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+2019-08-09 11:59:57 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://royalsmartmm.com/category/promotion/january-promotion-2019/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+2019-08-09 11:59:57 [scrapy.core.scraper] ERROR: Spider error processing <GET http://royalsmartmm.com/category/promotion/january-promotion-2019/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+Traceback (most recent call last):
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spiders\crawl.py", line 76, in _parse_response
+    cb_res = callback(response, **cb_kwargs) or ()
+  File "C:\Users\thawd\thesis\agent\agent\spiders\rs.py", line 51, in parse_page
+    text_pass = AgentItem.chk_tfidf(self, text)
+  File "C:\Users\thawd\thesis\agent\agent\items.py", line 49, in chk_tfidf
+    cs = cosine_similarity(tfidf_matrix[0:1], tfidf_ma)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 1027, in cosine_similarity
+    X, Y = check_pairwise_arrays(X, Y)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 114, in check_pairwise_arrays
+    estimator=estimator)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\utils\validation.py", line 521, in check_array
+    "if it contains a single sample.".format(array))
+ValueError: Expected 2D array, got 1D array instead:
+array=[1.].
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+2019-08-09 11:59:57 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://royalsmartmm.com/category/promotion/may-promotion-2019/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+2019-08-09 11:59:57 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://royalsmartmm.com/category/promotion/march-promo-19/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+2019-08-09 11:59:57 [scrapy.core.scraper] ERROR: Spider error processing <GET http://royalsmartmm.com/category/promotion/may-promotion-2019/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+Traceback (most recent call last):
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spiders\crawl.py", line 76, in _parse_response
+    cb_res = callback(response, **cb_kwargs) or ()
+  File "C:\Users\thawd\thesis\agent\agent\spiders\rs.py", line 51, in parse_page
+    text_pass = AgentItem.chk_tfidf(self, text)
+  File "C:\Users\thawd\thesis\agent\agent\items.py", line 49, in chk_tfidf
+    cs = cosine_similarity(tfidf_matrix[0:1], tfidf_ma)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 1027, in cosine_similarity
+    X, Y = check_pairwise_arrays(X, Y)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 114, in check_pairwise_arrays
+    estimator=estimator)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\utils\validation.py", line 521, in check_array
+    "if it contains a single sample.".format(array))
+ValueError: Expected 2D array, got 1D array instead:
+array=[1.].
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+2019-08-09 11:59:57 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://royalsmartmm.com/events/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+2019-08-09 11:59:57 [scrapy.core.scraper] ERROR: Spider error processing <GET http://royalsmartmm.com/category/promotion/march-promo-19/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+Traceback (most recent call last):
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spiders\crawl.py", line 76, in _parse_response
+    cb_res = callback(response, **cb_kwargs) or ()
+  File "C:\Users\thawd\thesis\agent\agent\spiders\rs.py", line 51, in parse_page
+    text_pass = AgentItem.chk_tfidf(self, text)
+  File "C:\Users\thawd\thesis\agent\agent\items.py", line 49, in chk_tfidf
+    cs = cosine_similarity(tfidf_matrix[0:1], tfidf_ma)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 1027, in cosine_similarity
+    X, Y = check_pairwise_arrays(X, Y)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 114, in check_pairwise_arrays
+    estimator=estimator)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\utils\validation.py", line 521, in check_array
+    "if it contains a single sample.".format(array))
+ValueError: Expected 2D array, got 1D array instead:
+array=[1.].
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+2019-08-09 11:59:57 [scrapy.core.scraper] ERROR: Spider error processing <GET http://royalsmartmm.com/events/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+Traceback (most recent call last):
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spiders\crawl.py", line 76, in _parse_response
+    cb_res = callback(response, **cb_kwargs) or ()
+  File "C:\Users\thawd\thesis\agent\agent\spiders\rs.py", line 51, in parse_page
+    text_pass = AgentItem.chk_tfidf(self, text)
+  File "C:\Users\thawd\thesis\agent\agent\items.py", line 49, in chk_tfidf
+    cs = cosine_similarity(tfidf_matrix[0:1], tfidf_ma)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 1027, in cosine_similarity
+    X, Y = check_pairwise_arrays(X, Y)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 114, in check_pairwise_arrays
+    estimator=estimator)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\utils\validation.py", line 521, in check_array
+    "if it contains a single sample.".format(array))
+ValueError: Expected 2D array, got 1D array instead:
+array=[1.].
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+2019-08-09 11:59:57 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://royalsmartmm.com/category/promotion/june-promotion-2019/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+2019-08-09 11:59:58 [scrapy.core.scraper] ERROR: Spider error processing <GET http://royalsmartmm.com/category/promotion/june-promotion-2019/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+Traceback (most recent call last):
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spiders\crawl.py", line 76, in _parse_response
+    cb_res = callback(response, **cb_kwargs) or ()
+  File "C:\Users\thawd\thesis\agent\agent\spiders\rs.py", line 51, in parse_page
+    text_pass = AgentItem.chk_tfidf(self, text)
+  File "C:\Users\thawd\thesis\agent\agent\items.py", line 49, in chk_tfidf
+    cs = cosine_similarity(tfidf_matrix[0:1], tfidf_ma)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 1027, in cosine_similarity
+    X, Y = check_pairwise_arrays(X, Y)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 114, in check_pairwise_arrays
+    estimator=estimator)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\utils\validation.py", line 521, in check_array
+    "if it contains a single sample.".format(array))
+ValueError: Expected 2D array, got 1D array instead:
+array=[1.].
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+2019-08-09 11:59:58 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://royalsmartmm.com/category/promotion/july-promotion-2019/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+2019-08-09 11:59:58 [scrapy.core.scraper] ERROR: Spider error processing <GET http://royalsmartmm.com/category/promotion/july-promotion-2019/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+Traceback (most recent call last):
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spiders\crawl.py", line 76, in _parse_response
+    cb_res = callback(response, **cb_kwargs) or ()
+  File "C:\Users\thawd\thesis\agent\agent\spiders\rs.py", line 51, in parse_page
+    text_pass = AgentItem.chk_tfidf(self, text)
+  File "C:\Users\thawd\thesis\agent\agent\items.py", line 49, in chk_tfidf
+    cs = cosine_similarity(tfidf_matrix[0:1], tfidf_ma)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 1027, in cosine_similarity
+    X, Y = check_pairwise_arrays(X, Y)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 114, in check_pairwise_arrays
+    estimator=estimator)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\utils\validation.py", line 521, in check_array
+    "if it contains a single sample.".format(array))
+ValueError: Expected 2D array, got 1D array instead:
+array=[1.].
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+2019-08-09 11:59:58 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://royalsmartmm.com/category/promotion/august-promotion-2019/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+2019-08-09 11:59:58 [scrapy.core.scraper] ERROR: Spider error processing <GET http://royalsmartmm.com/category/promotion/august-promotion-2019/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+Traceback (most recent call last):
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spiders\crawl.py", line 76, in _parse_response
+    cb_res = callback(response, **cb_kwargs) or ()
+  File "C:\Users\thawd\thesis\agent\agent\spiders\rs.py", line 51, in parse_page
+    text_pass = AgentItem.chk_tfidf(self, text)
+  File "C:\Users\thawd\thesis\agent\agent\items.py", line 49, in chk_tfidf
+    cs = cosine_similarity(tfidf_matrix[0:1], tfidf_ma)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 1027, in cosine_similarity
+    X, Y = check_pairwise_arrays(X, Y)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 114, in check_pairwise_arrays
+    estimator=estimator)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\utils\validation.py", line 521, in check_array
+    "if it contains a single sample.".format(array))
+ValueError: Expected 2D array, got 1D array instead:
+array=[1.].
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+2019-08-09 11:59:58 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+2019-08-09 11:59:58 [scrapy.core.scraper] ERROR: Spider error processing <GET http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+Traceback (most recent call last):
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spiders\crawl.py", line 76, in _parse_response
+    cb_res = callback(response, **cb_kwargs) or ()
+  File "C:\Users\thawd\thesis\agent\agent\spiders\rs.py", line 51, in parse_page
+    text_pass = AgentItem.chk_tfidf(self, text)
+  File "C:\Users\thawd\thesis\agent\agent\items.py", line 49, in chk_tfidf
+    cs = cosine_similarity(tfidf_matrix[0:1], tfidf_ma)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 1027, in cosine_similarity
+    X, Y = check_pairwise_arrays(X, Y)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 114, in check_pairwise_arrays
+    estimator=estimator)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\utils\validation.py", line 521, in check_array
+    "if it contains a single sample.".format(array))
+ValueError: Expected 2D array, got 1D array instead:
+array=[1.].
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+2019-08-09 11:59:58 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://royalsmartmm.com/laserjet-pro/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+2019-08-09 11:59:58 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://royalsmartmm.com/officejet-pro/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+2019-08-09 11:59:58 [scrapy.core.scraper] ERROR: Spider error processing <GET http://royalsmartmm.com/laserjet-pro/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+Traceback (most recent call last):
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spiders\crawl.py", line 76, in _parse_response
+    cb_res = callback(response, **cb_kwargs) or ()
+  File "C:\Users\thawd\thesis\agent\agent\spiders\rs.py", line 51, in parse_page
+    text_pass = AgentItem.chk_tfidf(self, text)
+  File "C:\Users\thawd\thesis\agent\agent\items.py", line 49, in chk_tfidf
+    cs = cosine_similarity(tfidf_matrix[0:1], tfidf_ma)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 1027, in cosine_similarity
+    X, Y = check_pairwise_arrays(X, Y)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 114, in check_pairwise_arrays
+    estimator=estimator)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\utils\validation.py", line 521, in check_array
+    "if it contains a single sample.".format(array))
+ValueError: Expected 2D array, got 1D array instead:
+array=[1.].
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+2019-08-09 11:59:58 [scrapy.core.scraper] ERROR: Spider error processing <GET http://royalsmartmm.com/officejet-pro/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+Traceback (most recent call last):
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spiders\crawl.py", line 76, in _parse_response
+    cb_res = callback(response, **cb_kwargs) or ()
+  File "C:\Users\thawd\thesis\agent\agent\spiders\rs.py", line 51, in parse_page
+    text_pass = AgentItem.chk_tfidf(self, text)
+  File "C:\Users\thawd\thesis\agent\agent\items.py", line 49, in chk_tfidf
+    cs = cosine_similarity(tfidf_matrix[0:1], tfidf_ma)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 1027, in cosine_similarity
+    X, Y = check_pairwise_arrays(X, Y)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 114, in check_pairwise_arrays
+    estimator=estimator)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\utils\validation.py", line 521, in check_array
+    "if it contains a single sample.".format(array))
+ValueError: Expected 2D array, got 1D array instead:
+array=[1.].
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+2019-08-09 11:59:58 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://royalsmartmm.com/inktank/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+2019-08-09 11:59:58 [scrapy.core.scraper] ERROR: Spider error processing <GET http://royalsmartmm.com/inktank/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+Traceback (most recent call last):
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spiders\crawl.py", line 76, in _parse_response
+    cb_res = callback(response, **cb_kwargs) or ()
+  File "C:\Users\thawd\thesis\agent\agent\spiders\rs.py", line 51, in parse_page
+    text_pass = AgentItem.chk_tfidf(self, text)
+  File "C:\Users\thawd\thesis\agent\agent\items.py", line 49, in chk_tfidf
+    cs = cosine_similarity(tfidf_matrix[0:1], tfidf_ma)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 1027, in cosine_similarity
+    X, Y = check_pairwise_arrays(X, Y)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 114, in check_pairwise_arrays
+    estimator=estimator)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\utils\validation.py", line 521, in check_array
+    "if it contains a single sample.".format(array))
+ValueError: Expected 2D array, got 1D array instead:
+array=[1.].
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+2019-08-09 11:59:59 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://royalsmartmm.com/printer/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+2019-08-09 11:59:59 [scrapy.core.scraper] ERROR: Spider error processing <GET http://royalsmartmm.com/printer/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+Traceback (most recent call last):
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spiders\crawl.py", line 76, in _parse_response
+    cb_res = callback(response, **cb_kwargs) or ()
+  File "C:\Users\thawd\thesis\agent\agent\spiders\rs.py", line 51, in parse_page
+    text_pass = AgentItem.chk_tfidf(self, text)
+  File "C:\Users\thawd\thesis\agent\agent\items.py", line 49, in chk_tfidf
+    cs = cosine_similarity(tfidf_matrix[0:1], tfidf_ma)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 1027, in cosine_similarity
+    X, Y = check_pairwise_arrays(X, Y)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 114, in check_pairwise_arrays
+    estimator=estimator)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\utils\validation.py", line 521, in check_array
+    "if it contains a single sample.".format(array))
+ValueError: Expected 2D array, got 1D array instead:
+array=[1.].
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+2019-08-09 11:59:59 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://royalsmartmm.com/hp14-15/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+2019-08-09 11:59:59 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://royalsmartmm.com/monitor/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+2019-08-09 11:59:59 [scrapy.core.scraper] ERROR: Spider error processing <GET http://royalsmartmm.com/hp14-15/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+Traceback (most recent call last):
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spiders\crawl.py", line 76, in _parse_response
+    cb_res = callback(response, **cb_kwargs) or ()
+  File "C:\Users\thawd\thesis\agent\agent\spiders\rs.py", line 51, in parse_page
+    text_pass = AgentItem.chk_tfidf(self, text)
+  File "C:\Users\thawd\thesis\agent\agent\items.py", line 49, in chk_tfidf
+    cs = cosine_similarity(tfidf_matrix[0:1], tfidf_ma)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 1027, in cosine_similarity
+    X, Y = check_pairwise_arrays(X, Y)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 114, in check_pairwise_arrays
+    estimator=estimator)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\utils\validation.py", line 521, in check_array
+    "if it contains a single sample.".format(array))
+ValueError: Expected 2D array, got 1D array instead:
+array=[1.].
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+2019-08-09 11:59:59 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://royalsmartmm.com/aio/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+2019-08-09 11:59:59 [scrapy.core.scraper] ERROR: Spider error processing <GET http://royalsmartmm.com/monitor/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+Traceback (most recent call last):
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spiders\crawl.py", line 76, in _parse_response
+    cb_res = callback(response, **cb_kwargs) or ()
+  File "C:\Users\thawd\thesis\agent\agent\spiders\rs.py", line 51, in parse_page
+    text_pass = AgentItem.chk_tfidf(self, text)
+  File "C:\Users\thawd\thesis\agent\agent\items.py", line 49, in chk_tfidf
+    cs = cosine_similarity(tfidf_matrix[0:1], tfidf_ma)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 1027, in cosine_similarity
+    X, Y = check_pairwise_arrays(X, Y)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 114, in check_pairwise_arrays
+    estimator=estimator)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\utils\validation.py", line 521, in check_array
+    "if it contains a single sample.".format(array))
+ValueError: Expected 2D array, got 1D array instead:
+array=[1.].
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+2019-08-09 11:59:59 [scrapy.core.scraper] ERROR: Spider error processing <GET http://royalsmartmm.com/aio/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+Traceback (most recent call last):
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spiders\crawl.py", line 76, in _parse_response
+    cb_res = callback(response, **cb_kwargs) or ()
+  File "C:\Users\thawd\thesis\agent\agent\spiders\rs.py", line 51, in parse_page
+    text_pass = AgentItem.chk_tfidf(self, text)
+  File "C:\Users\thawd\thesis\agent\agent\items.py", line 49, in chk_tfidf
+    cs = cosine_similarity(tfidf_matrix[0:1], tfidf_ma)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 1027, in cosine_similarity
+    X, Y = check_pairwise_arrays(X, Y)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 114, in check_pairwise_arrays
+    estimator=estimator)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\utils\validation.py", line 521, in check_array
+    "if it contains a single sample.".format(array))
+ValueError: Expected 2D array, got 1D array instead:
+array=[1.].
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+2019-08-09 11:59:59 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://royalsmartmm.com/hp-pavilion/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+2019-08-09 11:59:59 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://royalsmartmm.com/hp-envy/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+2019-08-09 11:59:59 [scrapy.core.scraper] ERROR: Spider error processing <GET http://royalsmartmm.com/hp-pavilion/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+Traceback (most recent call last):
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spiders\crawl.py", line 76, in _parse_response
+    cb_res = callback(response, **cb_kwargs) or ()
+  File "C:\Users\thawd\thesis\agent\agent\spiders\rs.py", line 51, in parse_page
+    text_pass = AgentItem.chk_tfidf(self, text)
+  File "C:\Users\thawd\thesis\agent\agent\items.py", line 49, in chk_tfidf
+    cs = cosine_similarity(tfidf_matrix[0:1], tfidf_ma)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 1027, in cosine_similarity
+    X, Y = check_pairwise_arrays(X, Y)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 114, in check_pairwise_arrays
+    estimator=estimator)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\utils\validation.py", line 521, in check_array
+    "if it contains a single sample.".format(array))
+ValueError: Expected 2D array, got 1D array instead:
+array=[1.].
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+2019-08-09 11:59:59 [scrapy.core.scraper] ERROR: Spider error processing <GET http://royalsmartmm.com/hp-envy/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+Traceback (most recent call last):
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spiders\crawl.py", line 76, in _parse_response
+    cb_res = callback(response, **cb_kwargs) or ()
+  File "C:\Users\thawd\thesis\agent\agent\spiders\rs.py", line 51, in parse_page
+    text_pass = AgentItem.chk_tfidf(self, text)
+  File "C:\Users\thawd\thesis\agent\agent\items.py", line 49, in chk_tfidf
+    cs = cosine_similarity(tfidf_matrix[0:1], tfidf_ma)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 1027, in cosine_similarity
+    X, Y = check_pairwise_arrays(X, Y)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 114, in check_pairwise_arrays
+    estimator=estimator)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\utils\validation.py", line 521, in check_array
+    "if it contains a single sample.".format(array))
+ValueError: Expected 2D array, got 1D array instead:
+array=[1.].
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+2019-08-09 12:00:00 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://royalsmartmm.com/hp-pavilion-gaming/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+2019-08-09 12:00:00 [scrapy.core.scraper] ERROR: Spider error processing <GET http://royalsmartmm.com/hp-pavilion-gaming/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+Traceback (most recent call last):
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spiders\crawl.py", line 76, in _parse_response
+    cb_res = callback(response, **cb_kwargs) or ()
+  File "C:\Users\thawd\thesis\agent\agent\spiders\rs.py", line 51, in parse_page
+    text_pass = AgentItem.chk_tfidf(self, text)
+  File "C:\Users\thawd\thesis\agent\agent\items.py", line 49, in chk_tfidf
+    cs = cosine_similarity(tfidf_matrix[0:1], tfidf_ma)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 1027, in cosine_similarity
+    X, Y = check_pairwise_arrays(X, Y)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 114, in check_pairwise_arrays
+    estimator=estimator)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\utils\validation.py", line 521, in check_array
+    "if it contains a single sample.".format(array))
+ValueError: Expected 2D array, got 1D array instead:
+array=[1.].
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+2019-08-09 12:00:00 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://royalsmartmm.com/hp-spectre-13/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+2019-08-09 12:00:00 [scrapy.core.scraper] ERROR: Spider error processing <GET http://royalsmartmm.com/hp-spectre-13/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+Traceback (most recent call last):
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spiders\crawl.py", line 76, in _parse_response
+    cb_res = callback(response, **cb_kwargs) or ()
+  File "C:\Users\thawd\thesis\agent\agent\spiders\rs.py", line 51, in parse_page
+    text_pass = AgentItem.chk_tfidf(self, text)
+  File "C:\Users\thawd\thesis\agent\agent\items.py", line 49, in chk_tfidf
+    cs = cosine_similarity(tfidf_matrix[0:1], tfidf_ma)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 1027, in cosine_similarity
+    X, Y = check_pairwise_arrays(X, Y)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 114, in check_pairwise_arrays
+    estimator=estimator)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\utils\validation.py", line 521, in check_array
+    "if it contains a single sample.".format(array))
+ValueError: Expected 2D array, got 1D array instead:
+array=[1.].
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+2019-08-09 12:00:01 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://royalsmartmm.com/commercial-series/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+2019-08-09 12:00:01 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://royalsmartmm.com/hp-pavilion-x360/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+2019-08-09 12:00:01 [scrapy.core.scraper] ERROR: Spider error processing <GET http://royalsmartmm.com/commercial-series/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+Traceback (most recent call last):
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spiders\crawl.py", line 76, in _parse_response
+    cb_res = callback(response, **cb_kwargs) or ()
+  File "C:\Users\thawd\thesis\agent\agent\spiders\rs.py", line 51, in parse_page
+    text_pass = AgentItem.chk_tfidf(self, text)
+  File "C:\Users\thawd\thesis\agent\agent\items.py", line 49, in chk_tfidf
+    cs = cosine_similarity(tfidf_matrix[0:1], tfidf_ma)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 1027, in cosine_similarity
+    X, Y = check_pairwise_arrays(X, Y)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 114, in check_pairwise_arrays
+    estimator=estimator)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\utils\validation.py", line 521, in check_array
+    "if it contains a single sample.".format(array))
+ValueError: Expected 2D array, got 1D array instead:
+array=[1.].
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+2019-08-09 12:00:01 [scrapy.core.scraper] ERROR: Spider error processing <GET http://royalsmartmm.com/hp-pavilion-x360/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+Traceback (most recent call last):
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spiders\crawl.py", line 76, in _parse_response
+    cb_res = callback(response, **cb_kwargs) or ()
+  File "C:\Users\thawd\thesis\agent\agent\spiders\rs.py", line 51, in parse_page
+    text_pass = AgentItem.chk_tfidf(self, text)
+  File "C:\Users\thawd\thesis\agent\agent\items.py", line 49, in chk_tfidf
+    cs = cosine_similarity(tfidf_matrix[0:1], tfidf_ma)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 1027, in cosine_similarity
+    X, Y = check_pairwise_arrays(X, Y)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 114, in check_pairwise_arrays
+    estimator=estimator)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\utils\validation.py", line 521, in check_array
+    "if it contains a single sample.".format(array))
+ValueError: Expected 2D array, got 1D array instead:
+array=[1.].
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+2019-08-09 12:00:01 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://royalsmartmm.com/hp-spectre-x360/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+2019-08-09 12:00:01 [scrapy.core.scraper] ERROR: Spider error processing <GET http://royalsmartmm.com/hp-spectre-x360/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+Traceback (most recent call last):
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spiders\crawl.py", line 76, in _parse_response
+    cb_res = callback(response, **cb_kwargs) or ()
+  File "C:\Users\thawd\thesis\agent\agent\spiders\rs.py", line 51, in parse_page
+    text_pass = AgentItem.chk_tfidf(self, text)
+  File "C:\Users\thawd\thesis\agent\agent\items.py", line 49, in chk_tfidf
+    cs = cosine_similarity(tfidf_matrix[0:1], tfidf_ma)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 1027, in cosine_similarity
+    X, Y = check_pairwise_arrays(X, Y)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 114, in check_pairwise_arrays
+    estimator=estimator)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\utils\validation.py", line 521, in check_array
+    "if it contains a single sample.".format(array))
+ValueError: Expected 2D array, got 1D array instead:
+array=[1.].
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+2019-08-09 12:00:02 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://royalsmartmm.com/hpdesktop/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+2019-08-09 12:00:02 [scrapy.core.scraper] ERROR: Spider error processing <GET http://royalsmartmm.com/hpdesktop/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+Traceback (most recent call last):
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spiders\crawl.py", line 76, in _parse_response
+    cb_res = callback(response, **cb_kwargs) or ()
+  File "C:\Users\thawd\thesis\agent\agent\spiders\rs.py", line 51, in parse_page
+    text_pass = AgentItem.chk_tfidf(self, text)
+  File "C:\Users\thawd\thesis\agent\agent\items.py", line 49, in chk_tfidf
+    cs = cosine_similarity(tfidf_matrix[0:1], tfidf_ma)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 1027, in cosine_similarity
+    X, Y = check_pairwise_arrays(X, Y)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 114, in check_pairwise_arrays
+    estimator=estimator)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\utils\validation.py", line 521, in check_array
+    "if it contains a single sample.".format(array))
+ValueError: Expected 2D array, got 1D array instead:
+array=[1.].
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+2019-08-09 12:00:02 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://royalsmartmm.com/laptop/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+2019-08-09 12:00:02 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://royalsmartmm.com/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+2019-08-09 12:00:03 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://royalsmartmm.com/partners/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+2019-08-09 12:00:03 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://royalsmartmm.com/product/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+2019-08-09 12:00:03 [scrapy.core.scraper] ERROR: Spider error processing <GET http://royalsmartmm.com/laptop/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+Traceback (most recent call last):
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spiders\crawl.py", line 76, in _parse_response
+    cb_res = callback(response, **cb_kwargs) or ()
+  File "C:\Users\thawd\thesis\agent\agent\spiders\rs.py", line 51, in parse_page
+    text_pass = AgentItem.chk_tfidf(self, text)
+  File "C:\Users\thawd\thesis\agent\agent\items.py", line 49, in chk_tfidf
+    cs = cosine_similarity(tfidf_matrix[0:1], tfidf_ma)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 1027, in cosine_similarity
+    X, Y = check_pairwise_arrays(X, Y)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 114, in check_pairwise_arrays
+    estimator=estimator)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\utils\validation.py", line 521, in check_array
+    "if it contains a single sample.".format(array))
+ValueError: Expected 2D array, got 1D array instead:
+array=[1.].
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+2019-08-09 12:00:03 [scrapy.core.scraper] ERROR: Spider error processing <GET http://royalsmartmm.com/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+Traceback (most recent call last):
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spiders\crawl.py", line 76, in _parse_response
+    cb_res = callback(response, **cb_kwargs) or ()
+  File "C:\Users\thawd\thesis\agent\agent\spiders\rs.py", line 51, in parse_page
+    text_pass = AgentItem.chk_tfidf(self, text)
+  File "C:\Users\thawd\thesis\agent\agent\items.py", line 49, in chk_tfidf
+    cs = cosine_similarity(tfidf_matrix[0:1], tfidf_ma)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 1027, in cosine_similarity
+    X, Y = check_pairwise_arrays(X, Y)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 114, in check_pairwise_arrays
+    estimator=estimator)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\utils\validation.py", line 521, in check_array
+    "if it contains a single sample.".format(array))
+ValueError: Expected 2D array, got 1D array instead:
+array=[1.].
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+2019-08-09 12:00:03 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET http://royalsmartmm.com/hp-flyer/> from <GET http://royalsmartmm.com/hp-flyer>
+2019-08-09 12:00:03 [scrapy.core.scraper] ERROR: Spider error processing <GET http://royalsmartmm.com/partners/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+Traceback (most recent call last):
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spiders\crawl.py", line 76, in _parse_response
+    cb_res = callback(response, **cb_kwargs) or ()
+  File "C:\Users\thawd\thesis\agent\agent\spiders\rs.py", line 51, in parse_page
+    text_pass = AgentItem.chk_tfidf(self, text)
+  File "C:\Users\thawd\thesis\agent\agent\items.py", line 49, in chk_tfidf
+    cs = cosine_similarity(tfidf_matrix[0:1], tfidf_ma)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 1027, in cosine_similarity
+    X, Y = check_pairwise_arrays(X, Y)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 114, in check_pairwise_arrays
+    estimator=estimator)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\utils\validation.py", line 521, in check_array
+    "if it contains a single sample.".format(array))
+ValueError: Expected 2D array, got 1D array instead:
+array=[1.].
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+2019-08-09 12:00:03 [scrapy.core.scraper] ERROR: Spider error processing <GET http://royalsmartmm.com/product/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+Traceback (most recent call last):
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spiders\crawl.py", line 76, in _parse_response
+    cb_res = callback(response, **cb_kwargs) or ()
+  File "C:\Users\thawd\thesis\agent\agent\spiders\rs.py", line 51, in parse_page
+    text_pass = AgentItem.chk_tfidf(self, text)
+  File "C:\Users\thawd\thesis\agent\agent\items.py", line 49, in chk_tfidf
+    cs = cosine_similarity(tfidf_matrix[0:1], tfidf_ma)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 1027, in cosine_similarity
+    X, Y = check_pairwise_arrays(X, Y)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 114, in check_pairwise_arrays
+    estimator=estimator)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\utils\validation.py", line 521, in check_array
+    "if it contains a single sample.".format(array))
+ValueError: Expected 2D array, got 1D array instead:
+array=[1.].
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+2019-08-09 12:00:03 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://royalsmartmm.com/partners/> from <GET https://royalsmartmm.com/partners>
+2019-08-09 12:00:03 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://royalsmartmm.com/laptop/> from <GET https://royalsmartmm.com/laptop>
+2019-08-09 12:00:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://royalsmartmm.com/hp-flyer/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+2019-08-09 12:00:04 [scrapy.core.scraper] ERROR: Spider error processing <GET http://royalsmartmm.com/hp-flyer/> (referer: http://royalsmartmm.com/hp-spectre-notebook-13-v114tu-i7/)
+Traceback (most recent call last):
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\scrapy\spiders\crawl.py", line 76, in _parse_response
+    cb_res = callback(response, **cb_kwargs) or ()
+  File "C:\Users\thawd\thesis\agent\agent\spiders\rs.py", line 51, in parse_page
+    text_pass = AgentItem.chk_tfidf(self, text)
+  File "C:\Users\thawd\thesis\agent\agent\items.py", line 49, in chk_tfidf
+    cs = cosine_similarity(tfidf_matrix[0:1], tfidf_ma)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 1027, in cosine_similarity
+    X, Y = check_pairwise_arrays(X, Y)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\metrics\pairwise.py", line 114, in check_pairwise_arrays
+    estimator=estimator)
+  File "D:\ProgramData\Anaconda3\envs\tdz\lib\site-packages\sklearn\utils\validation.py", line 521, in check_array
+    "if it contains a single sample.".format(array))
+ValueError: Expected 2D array, got 1D array instead:
+array=[1.].
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+2019-08-09 12:00:05 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/laptop/> (referer: http://royalsmartmm.com)
+2019-08-09 12:00:05 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/cdn-cgi/l/email-protection#09666f6f606a6c497a64687b7d246470686764687b276a6664365a7c6b636c6a7d34416c6565662c3b39686e686067> (referer: https://royalsmartmm.com/laptop/)
+2019-08-09 12:00:06 [scrapy.spidermiddlewares.offsite] DEBUG: Filtered offsite request to 'www.cloudflare.com': <GET https://www.cloudflare.com/sign-up?utm_source=email_protection>
+2019-08-09 12:00:06 [scrapy.spidermiddlewares.offsite] DEBUG: Filtered offsite request to 'support.cloudflare.com': <GET https://support.cloudflare.com/hc/en-us/articles/200170016-What-is-Email-Address-Obfuscation->
+2019-08-09 12:00:06 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/partners/> (referer: http://royalsmartmm.com)
+2019-08-09 12:00:07 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://royalsmartmm.com/hp-flyer/> from <GET https://royalsmartmm.com/hp-flyer>
+2019-08-09 12:00:07 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/hpdesktop/> (referer: https://royalsmartmm.com/laptop/)
+2019-08-09 12:00:07 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/contact/> (referer: https://royalsmartmm.com/laptop/)
+2019-08-09 12:00:07 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/company-overview/> (referer: https://royalsmartmm.com/laptop/)
+2019-08-09 12:00:08 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/> (referer: https://royalsmartmm.com/laptop/)
+2019-08-09 12:00:08 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/category/promotion/january-promotion-2019/> (referer: https://royalsmartmm.com/laptop/)
+2019-08-09 12:00:08 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/events/> (referer: https://royalsmartmm.com/laptop/)
+2019-08-09 12:00:08 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/product/> (referer: https://royalsmartmm.com/laptop/)
+2019-08-09 12:00:08 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/category/promotion/feb-promo-19/> (referer: https://royalsmartmm.com/laptop/)
+2019-08-09 12:00:09 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/category/promotion/april-promo-2019/> (referer: https://royalsmartmm.com/laptop/)
+2019-08-09 12:00:09 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/category/promotion/march-promo-19/> (referer: https://royalsmartmm.com/laptop/)
+2019-08-09 12:00:09 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/category/promotion/may-promotion-2019/> (referer: https://royalsmartmm.com/laptop/)
+2019-08-09 12:00:09 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/category/promotion/june-promotion-2019/> (referer: https://royalsmartmm.com/laptop/)
+2019-08-09 12:00:10 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/officejet-pro/> (referer: https://royalsmartmm.com/laptop/)
+2019-08-09 12:00:10 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/category/promotion/august-promotion-2019/> (referer: https://royalsmartmm.com/laptop/)
+2019-08-09 12:00:10 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/laserjet-pro/> (referer: https://royalsmartmm.com/laptop/)
+2019-08-09 12:00:10 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/inktank/> (referer: https://royalsmartmm.com/laptop/)
+2019-08-09 12:00:10 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/category/promotion/july-promotion-2019/> (referer: https://royalsmartmm.com/laptop/)
+2019-08-09 12:00:11 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/printer/> (referer: https://royalsmartmm.com/laptop/)
+2019-08-09 12:00:12 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/hp-spectre-13/> (referer: https://royalsmartmm.com/laptop/)
+2019-08-09 12:00:12 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/monitor/> (referer: https://royalsmartmm.com/laptop/)
+2019-08-09 12:00:12 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/hp-pavilion-gaming/> (referer: https://royalsmartmm.com/laptop/)
+2019-08-09 12:00:12 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/aio/> (referer: https://royalsmartmm.com/laptop/)
+2019-08-09 12:00:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/hp14-15/> (referer: https://royalsmartmm.com/laptop/)
+2019-08-09 12:00:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/hp-pavilion/> (referer: https://royalsmartmm.com/laptop/)
+2019-08-09 12:00:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/hp-envy/> (referer: https://royalsmartmm.com/laptop/)
+2019-08-09 12:00:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/hp-flyer/> (referer: https://royalsmartmm.com/laptop/)
+2019-08-09 12:00:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/hp-spectre-x360/> (referer: https://royalsmartmm.com/laptop/)
+2019-08-09 12:00:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/commercial-series/> (referer: https://royalsmartmm.com/laptop/)
+2019-08-09 12:00:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/hp-pavilion-x360/> (referer: https://royalsmartmm.com/laptop/)
+2019-08-09 12:00:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/category/promotion/january-promotion-2019/page/2/> (referer: https://royalsmartmm.com/category/promotion/january-promotion-2019/)
+2019-08-09 12:00:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/power-never-looked-so-thin/> (referer: https://royalsmartmm.com/category/promotion/january-promotion-2019/)
+2019-08-09 12:00:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/category/promotion/> (referer: https://royalsmartmm.com/category/promotion/january-promotion-2019/)
+2019-08-09 12:00:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/color-your-world-january/> (referer: https://royalsmartmm.com/category/promotion/january-promotion-2019/)
+2019-08-09 12:00:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/gaming-flash-sale/> (referer: https://royalsmartmm.com/category/promotion/january-promotion-2019/)
+2019-08-09 12:00:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/enjoy-your-new-era-promotion/> (referer: https://royalsmartmm.com/category/promotion/january-promotion-2019/)
+2019-08-09 12:00:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/author/royalsmartmm/> (referer: https://royalsmartmm.com/events/)
+2019-08-09 12:00:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/smart-life-smart-choice/> (referer: https://royalsmartmm.com/events/)
+2019-08-09 12:00:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/hp-partners-night-2018/> (referer: https://royalsmartmm.com/events/)
+2019-08-09 12:00:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/hp-with-love-promotion/> (referer: https://royalsmartmm.com/category/promotion/feb-promo-19/)
+2019-08-09 12:00:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/upgrade-your-daily-office-lifestyles/> (referer: https://royalsmartmm.com/events/)
+2019-08-09 12:00:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/category/promotion/feb-promo-19/page/2/> (referer: https://royalsmartmm.com/category/promotion/feb-promo-19/)
+2019-08-09 12:00:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/category/promotion/march-promo-19/page/2/> (referer: https://royalsmartmm.com/category/promotion/march-promo-19/)
+2019-08-09 12:00:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/sln-day/> (referer: https://royalsmartmm.com/events/)
+2019-08-09 12:00:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/hp-premium-week-3/> (referer: https://royalsmartmm.com/category/promotion/march-promo-19/)
+2019-08-09 12:00:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/color-your-world-3/> (referer: https://royalsmartmm.com/category/promotion/june-promotion-2019/)
+2019-08-09 12:00:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/let-it-rain-over-you/> (referer: https://royalsmartmm.com/category/promotion/june-promotion-2019/)
+2019-08-09 12:00:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/category/promotion/may-promotion-2019/page/2/> (referer: https://royalsmartmm.com/category/promotion/may-promotion-2019/)
+2019-08-09 12:00:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://royalsmartmm.com/5010-2/> (referer: https://royalsmartmm.com/category/promotion/june-promotion-2019/)

@@ -42,7 +42,7 @@ hr { display:block; height:1px; border:0; border-top:1px solid #fff; margin:1em 
     <li><a href="index.php">Home</a></li>
     <li><a href="crawl.php" class="active">Crawl</a></li>
     <li><a href="find.php">Find items</a></li>
-    <li><a href="framework.php">Framework</a></li>
+    <li><a href="https://scrapy.org/">Framework</a></li>
     <li><a href="https://www.facebook.com/thawdezin">Contact</a></li>
   </ul>
 </div>

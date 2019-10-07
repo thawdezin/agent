@@ -19,7 +19,7 @@ NEWSPIDER_MODULE = 'agent.spiders'
 USER_AGENT = 'UTYCC Student from Myanmar(Burma)'# +959797990911 www.facebook.com/thawdezin' #'agent (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 CONCURRENT_REQUESTS = 256

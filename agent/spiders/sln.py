@@ -12,7 +12,7 @@ def rrm_tags(self, text):
     return remove_tags(text).replace("\n",' ')
 
 class LinnSpider(CrawlSpider):
-    name = "sln"
+    name = "slnm"
     allowed_domains = ["linnonlinestore.com","sln-myanmar.com","royalsmartmm.com"]
     start_urls = ["http://sln-myanmar.com/"]#,"http://sln-myanmar.com/","http://royalsmartmm.com"]
 
