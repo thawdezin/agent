@@ -1,8 +1,10 @@
 # agent
 
-TFIDF based Crawling Agent with KNN Algorithm
+😎😎😎 Web Crawling and Scraping Agent using TF-IDF 😎😎😎
 
-The entire project is made up of using MySQL, PHP and Python (Scrapy Framework).
+TFIDF based Crawling Agent with modified KNN Algorithm by using Levenshtein distance instead of euclidean or manhattan. 😁
+
+The entire project is made up of using MySQL, PHP and Python (Scrapy Framework). 😈
 
 Template used in here is "Free responsive template v 1.0" by SiGa.
 Special thanks to CSDN for their delicious code 😂
