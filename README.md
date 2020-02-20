@@ -23,4 +23,6 @@ Starလေးတွေ ပေးသွားကြပါအုံးလို့
 特别感谢CSDN的美味代码😂
 
 
-Github link => https://www.github.com/thawdezin/agent
+Github link -> https://www.github.com/thawdezin/agent
+
+For Installation -> https://github.com/thawdezin/agent/wiki/Installation
