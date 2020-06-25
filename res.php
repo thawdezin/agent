@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Mini Agent | Find Product</title>
+<title>Mini Agent | Find Product 2</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
 <link rel="stylesheet" href="css/inuit.css">
