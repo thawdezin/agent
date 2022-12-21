@@ -6,7 +6,8 @@ from scrapy.item import Field, Item
 from scrapy.spiders import CrawlSpider, Rule
 from scrapy.linkextractors import LinkExtractor
 from agent.items import AgentItem
-from scrapy.utils.markup import remove_tags
+# from scrapy.utils.markup import remove_tags
+from w3lib.html import remove_tags
 
 def rrm_tags(self, text):
     return remove_tags(text).replace("\n",' ')

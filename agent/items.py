@@ -6,7 +6,8 @@
 # https://doc.scrapy.org/en/latest/topics/items.html
 
 import scrapy
-from scrapy.utils.markup import remove_tags
+# from scrapy.utils.markup import remove_tags
+from w3lib.html import remove_tags
 from urllib.parse import urlparse
 import datetime
 import time

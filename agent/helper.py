@@ -1,5 +1,6 @@
 import scrapy
-from scrapy.utils.markup import remove_tags
+# from scrapy.utils.markup import remove_tags
+from w3lib.html import remove_tags
 from urllib.parse import urlparse
 
 class Helper(scrapy.Item):
